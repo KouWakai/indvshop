@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.index');
+        $imagePath1 = "/IMG_0477.JPG";
+
+        $image1 = Image::make(public_path("{$imagePath1}"))->fit(700, 400);
+
+        $image1->save();
+
+        return view('home.index', compact('imagePath1'));
     }
 }
