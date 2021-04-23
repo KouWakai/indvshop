@@ -2,7 +2,7 @@
 <div>
   <hooper style="height: 400px" :progress="true" :autoPlay="true" :playSpeed="4000">
     <slide>
-      <img src="/IMG_0477.JPG" alt="">
+      <img :src="imgsrc_1" alt="">
     </slide>
     <slide>
       <img src="/IMG_0478.JPG" alt="">
@@ -22,10 +22,16 @@ import {
 import 'hooper/dist/hooper.css';
 
 export default {
+    props: ['topimg1'],
   components: {
     Hooper,
     Slide,
     HooperPagination
+  },
+  data (){
+      return {
+          imgsrc_1: this.topimg1
+      }
   }
 };
 </script>

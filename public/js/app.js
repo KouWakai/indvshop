@@ -1866,10 +1866,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['topimg1'],
   components: {
     Hooper: hooper__WEBPACK_IMPORTED_MODULE_0__.Hooper,
     Slide: hooper__WEBPACK_IMPORTED_MODULE_0__.Slide,
     HooperPagination: hooper__WEBPACK_IMPORTED_MODULE_0__.Pagination
+  },
+  data: function data() {
+    return {
+      imgsrc_1: this.topimg1
+    };
   }
 });
 
@@ -38717,9 +38723,7 @@ var render = function() {
           attrs: { progress: true, autoPlay: true, playSpeed: 4000 }
         },
         [
-          _c("slide", [
-            _c("img", { attrs: { src: "/IMG_0477.JPG", alt: "" } })
-          ]),
+          _c("slide", [_c("img", { attrs: { src: _vm.imgsrc_1, alt: "" } })]),
           _vm._v(" "),
           _c("slide", [
             _c("img", { attrs: { src: "/IMG_0478.JPG", alt: "" } })
