@@ -24,12 +24,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $imagePath1 = "/IMG_0477.JPG";
+        $imagePath["first"] = "/IMG_0477.JPG";
+        $imagePath["second"] = "/IMG_0478.JPG";
 
-        $image1 = Image::make(public_path("{$imagePath1}"))->fit(700, 400);
+        foreach($imagePath as $img){
+            $img = Image::make(public_path("{$img}"))->fit(1000, 400);
+            $img->save();
+        }
 
-        $image1->save();
-
-        return view('home.index', compact('imagePath1'));
+        return view('home.index', $imagePath);
     }
 }

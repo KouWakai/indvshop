@@ -1,36 +1,39 @@
 <template>
 <div>
-  <hooper style="height: 400px" :progress="true" :autoPlay="true" :playSpeed="4000">
+  <hooper style="height: 45vh" :progress="true" :autoPlay="true" :playSpeed="4000">
     <slide>
-      <img :src="imgsrc_1" alt="">
+      <img class="img" :src="imgsrc_1" alt="">
     </slide>
     <slide>
-      <img src="/IMG_0478.JPG" alt="">
+      <img class="img" :src="imgsrc_2" alt="">
     </slide>
 
-    <hooper-pagination slot="hooper-addons"></hooper-pagination>
+    <!-- <hooper-pagination slot="hooper-addons"></hooper-pagination>   -->
   </hooper>
   </div>
 </template>
 
 <script>
+import 'hooper/dist/hooper.css';
+import './../../css/slider.css';
+
 import {
     Hooper,
     Slide,
     Pagination as HooperPagination
     } from 'hooper';
-import 'hooper/dist/hooper.css';
 
 export default {
-    props: ['topimg1'],
+    props: ['topimg1', 'topimg2'],
   components: {
     Hooper,
     Slide,
-    HooperPagination
+    //HooperPagination
   },
   data (){
       return {
-          imgsrc_1: this.topimg1
+          imgsrc_1: this.topimg1,
+          imgsrc_2: this.topimg2
       }
   }
 };
