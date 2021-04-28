@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use App\Models\Home;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -22,16 +24,31 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Home $home, Product $product)
     {
-        $imagePath["first"] = "/IMG_0477.JPG";
-        $imagePath["second"] = "/IMG_0478.JPG";
+        $home = Home::find(1);
+        $product = Product::all();
 
-        foreach($imagePath as $img){
-            $img = Image::make(public_path("{$img}"))->fit(1000, 400);
+        $imagePath = [$home->slideOne, $home->slideTwo];
+
+        $bannerImg = $home->imgOne;
+
+        $img = Image::make(public_path("{$bannerImg}"))->fit(600,300);
+        $img->save();
+
+        foreach($imagePath as $imgpath){
+            $img = Image::make(public_path("{$imgpath}"))->fit(1000, 400);
             $img->save();
         }
 
-        return view('home.index', $imagePath);
+        foreach($product as $prd){
+            $imgpath = $prd->image;
+            $img = Image::make(public_path("{$imgpath}"))->fit(1000,1000);
+            $img->save();
+        }
+
+        
+
+        return view('home.index', compact('imagePath', 'bannerImg', 'product'));
     }
 }
