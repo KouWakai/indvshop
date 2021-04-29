@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
+
 class CartController extends Controller
 {
     public function store(){
-        dd($product = request()->input('product'));
+        $product = request()->input('product');
 
-        Cart::add($product->$id, $product->caption, 1, $product->price);
+        \Cart::add($product[0], $product[1], 1, $product[2]);
 
         return view('cart.index');
     }
