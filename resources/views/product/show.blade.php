@@ -13,7 +13,10 @@
                         <h5>{{ $product->price }}円</h5>
                 </div>
                 <div class="d-flex justify-content-center pt-3">
-                    <button class="btn btn-primary">カートに入れる</button>
+                    <form action="/cart" method="post">
+                    @csrf
+                        <button name="product" value={{ $product }} class="btn btn-primary">カートに入れる</button>
+                    </form>
                 </div>
             </div>
         </div>

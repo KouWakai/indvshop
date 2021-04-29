@@ -47,8 +47,6 @@ class HomeController extends Controller
             $img->save();
         }
 
-        
-
         return view('home.index', compact('imagePath', 'bannerImg', 'product'));
     }
 }
