@@ -19,11 +19,15 @@
     <div class="row p-4">
         @foreach($product as $prd)
         <div class="col-3 pb-4">
-            <img src={{ $prd->image ?? ''}} alt="" class="w-100">
-            <div class="text-center border rounded bg-white">
+            <a href="/product/{{ $prd->id }}">
+                <img src={{ $prd->image ?? ''}} alt="" class="w-100">
+            </a>
+            <a href="/product/{{ $prd->id }}">
+                <div class="text-center border rounded bg-white text-dark">
                 <span>{{ $prd->caption ?? ''}}<br></span>
                 <span>¥{{ $prd->price ?? ''}}</span>
-            </div>
+                </div>
+            </a>
         </div>
         @endforeach
     </div>
