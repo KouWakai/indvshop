@@ -81,7 +81,7 @@
     </div>
 
     <footer>
-        <div class="footer text-white bg-dark fixed-bottom">
+        <div class="footer text-white bg-dark">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 footer-about wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
