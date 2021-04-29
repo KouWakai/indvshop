@@ -9,9 +9,9 @@ use App\Models\Product;
 class CartController extends Controller
 {
     public function store(){
-        $product = request()->input('product');
+        $product = Product::find(request()->input('id'));
 
-        \Cart::add($product[0], $product[1], 1, $product[2]);
+        \Cart::add($product->id, $product->caption, 1, $product->price);
 
         return view('cart.index');
     }
