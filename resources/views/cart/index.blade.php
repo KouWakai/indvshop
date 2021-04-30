@@ -16,7 +16,7 @@
         <div class="row">
             @if(Cart::content()->isEmpty())
                 <div class="col-9 d-flex justify-content-center border bg-white">
-                    <h4 class="col-9 p-4 text-center">カートは空です</h4>
+                    <h4 class="col-9 mb-0 p-4 text-center">カートは空です</h4>
                 </div>
 
             @else
