@@ -13,11 +13,15 @@
         <div>
             @foreach(Cart::content() as $row)
             <div class="col-9 align-items-center d-flex justify-content-between text-center border-bottom bg-white">
-                <img src={{ $row->options->image }} class="col-2">
+                <img src={{ $row->options->image }} class="col-2 p-3">
                 <div class="col-2">{{ $row->name }}</div>
                 <div class="col-2">1</div>
                 <div class="col-2">{{ $row->price }}</div>
-                <a href="#" class="col-1 btn btn-outline-danger">削除</a>
+                <form action="/cart/{{ $row->rowId }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-outline-danger">削除</button>
+                </form>
             </div>
             @endforeach
         </div>
