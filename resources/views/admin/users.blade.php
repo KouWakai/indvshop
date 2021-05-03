@@ -23,7 +23,7 @@
               <td>{{ $user->id }}</td>
               <td>{{ $user->name }}</td>
               <td>{{ $user->email }}</td>
-              <td>{{ $user->timestamp }}</td>
+              <td>{{ $user->last_login }}</td>
               <td></td>
             </tr>
             @endforeach
