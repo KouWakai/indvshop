@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,11 @@ Route::group(['prefix' => 'admin'],function(){
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'],function(){
     Route::post('logout', [LoginController::class, 'logout'])->name('admin.logout');
     Route::get('home', [AdminHomeController::class, 'index'])->name('admin.home');
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('order', [DashboardController::class, 'index'])->name('admin.order');
+    Route::get('products', [DashboardController::class, 'index'])->name('admin.products');
+    Route::get('users', [DashboardController::class, 'index'])->name('admin.users');
+    Route::get('report', [DashboardController::class, 'index'])->name('admin.report');
+    Route::get('config', [DashboardController::class, 'index'])->name('admin.config');
+
 });
