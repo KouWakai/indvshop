@@ -24,7 +24,11 @@
               <td>{{ $user->name }}</td>
               <td>{{ $user->email }}</td>
               <td>{{ $user->last_login }}</td>
-              <td></td>
+              <td>
+                <a href="">
+                    <span data-feather="edit-2" style="width: 18px; height: 18px"></span>
+                </a>
+              </td>
             </tr>
             @endforeach
           </tbody>
