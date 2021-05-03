@@ -36,12 +36,14 @@ Route::group(['prefix' => 'admin'],function(){
     Route::post('login', [LoginController::class, 'login']);
 });
 
+//ここのルートは要リファクタリング
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'],function(){
     Route::post('logout', [LoginController::class, 'logout'])->name('admin.logout');
     Route::get('home', [AdminHomeController::class, 'index'])->name('admin.home');
     Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('order', [DashboardController::class, 'index'])->name('admin.order');
     Route::get('products', [DashboardController::class, 'index'])->name('admin.products');
+    Route::post('products', [DashboardController::class, 'store'])->name('admin.productsstore');
     Route::get('users', [DashboardController::class, 'index'])->name('admin.users');
     Route::get('report', [DashboardController::class, 'index'])->name('admin.report');
     Route::get('config', [DashboardController::class, 'index'])->name('admin.config');
