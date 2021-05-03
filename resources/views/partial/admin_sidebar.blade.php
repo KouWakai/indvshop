@@ -24,7 +24,7 @@
           <li class="nav-item">
             <a class="{{ url()->current() == route('admin.users') ? 'nav-link active' : 'nav-link'}}" href="/admin/users">
               <span data-feather="users"></span>
-              顧客
+              顧客管理
             </a>
           </li>
           <li class="nav-item">
