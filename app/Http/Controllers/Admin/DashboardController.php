@@ -12,7 +12,7 @@ class DashboardController extends Controller
     {
         $path = $request->path();
 
-        if($path = 'admin/users'){
+        if($path == 'admin/users'){
             $users = User::all();
             return view($path, compact('users'));
         }
