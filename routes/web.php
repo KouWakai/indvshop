@@ -43,7 +43,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'],function(){
     Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('order', [DashboardController::class, 'index'])->name('admin.order');
     Route::get('products', [DashboardController::class, 'index'])->name('admin.products');
-    Route::post('products', [DashboardController::class, 'store'])->name('admin.productsstore');
+    Route::post('products', [DashboardController::class, 'store'])->name('admin.products-store');
+    Route::patch('products/{product}', [DashboardController::class, 'update']);    
     Route::get('users', [DashboardController::class, 'index'])->name('admin.users');
     Route::get('report', [DashboardController::class, 'index'])->name('admin.report');
     Route::get('config', [DashboardController::class, 'index'])->name('admin.config');
