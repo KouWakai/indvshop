@@ -43,7 +43,7 @@ class HomeController extends Controller
 
         foreach($product as $prd){
             $imgpath = $prd->image;
-            $img = Image::make(public_path("{$imgpath}"))->fit(1000,1000);
+            $img = Image::make(public_path("storage/{$imgpath}"))->fit(1000,1000);
             $img->save();
         }
 

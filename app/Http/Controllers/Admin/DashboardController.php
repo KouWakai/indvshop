@@ -37,10 +37,6 @@ class DashboardController extends Controller
             'image' => 'required|image',
           ]);
 
-            //dd($request);
-
-            //dd($imagePath = $request->image);
-
           $imagePath = $request->image->store('uploads', 'public');
 
           $img = Image::make(public_path("storage/{$imagePath}"))->fit(1000,1000);
@@ -54,4 +50,44 @@ class DashboardController extends Controller
 
         return redirect($path);
     }
+
+    public function update(Request $request, Product $product)
+    {
+        //dd($i = $request);
+        if($request->get('delete'))
+        {
+            $product->delete();
+            $product = Product::all();
+
+            return view('admin.products', compact('product'));
+
+        }elseif($request->get('update'))
+        {
+            $data = request()->validate([
+                'caption' => 'required',
+                'price' => 'required',
+                'image' => '',
+              ]);
+
+              if(request('image')){
+                $imagePath = request('image')->store('uploads', 'public');
+
+                $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
+                $image->save();
+
+                $imageArray = ['image' => $imagePath];
+              }
+
+              $product->update([
+                'caption' => $data['caption'],
+                'price' => $data['price'],
+                'image' => $imagePath,
+              ]);
+
+              $product = Product::all();
+
+              return view('admin.products', compact('product'));
+        }
+    }
+
 }
