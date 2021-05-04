@@ -20,7 +20,7 @@
         @foreach($product as $prd)
         <div class="col-3 pb-4">
             <a href="/product/{{ $prd->id }}">
-                <img src={{ $prd->image ?? ''}} alt="" class="w-100">
+                <img src="/storage/{{ $prd->image ?? ''}}" alt="" class="w-100">
             </a>
             <a href="/product/{{ $prd->id }}">
                 <div class="text-center border rounded bg-white text-dark">
