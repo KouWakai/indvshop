@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row align-items-center">
         <div class="col-7 border-right">
-            <img src="{{ $product->image }}" class="w-100">
+            <img src="/storage/{{ $product->image }}" class="w-100">
         </div>
         <div class="col-5 pb-3">
             <div>
