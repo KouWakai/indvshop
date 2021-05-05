@@ -20,9 +20,21 @@ class CartController extends Controller
         return view('cart.index');
     }
 
-    public function destroy($rowId){
-        \Cart::remove($rowId);
+    public function destroy($rowId, Request $request){
+        if($request->get('empty'))
+        {
+            \Cart::destroy();
 
+            return redirect('/cart');
+        }else
+        {
+            \Cart::remove($rowId);
+        }
         return redirect('/cart');
+    }
+
+    public function show()
+    {
+        return view('cart.checkout');
     }
 }
