@@ -19,8 +19,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body class="d-flex flex-column h-100 bg-white">
+<body class="d-flex flex-column h-100 bg-paleorange">
     <div id="app">
+    <div>
         <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/home') }}">
@@ -82,8 +83,37 @@
                 </div>
             </div>
         </nav>
+    </div>
 
-        <main class="py-4 bg-white">
+    <div class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <nav>
+                    <ul class="nav d-flex">
+                        <li class="nav-item">
+                            <a href="/home"><h5 class="m-0 p-2 px-4 text-white">ホーム</h3></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/products"><h5 class="m-0 p-2 px-4 text-white">商品一覧</h3></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/makeorder"><h5 class="m-0 p-2 px-4 text-white">受注制作</h3></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/contact"><h5 class="m-0 p-2 px-4 text-white">お問い合わせ</h3></a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+
+    @section('header')
+
+    @show
+
+        <main class="bg-paleorange">
             @yield('content')
         </main>
     </div>
@@ -93,36 +123,32 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 footer-about wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                        <h3>About us</h3>
+                        <h3>会社概要</h3>
                         <p>
-                            We are a young company always looking for new and creative ideas to help you with our products in your everyday work.
+                            私たちは常にあなたの日常の作業では、当社の製品とあなたを助けるために新しい創造的なアイデアを探している会社です。
                         </p>
                         <p>© Company Inc.</p>
                     </div>
                     <div class="col-md-4 offset-md-1 footer-contact wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
-                        <h3>Contact</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Via Rossini 10, 10136 Turin Italy</p>
-                        <p><i class="fas fa-phone"></i> Phone: (0039) 333 12 68 347</p>
-                        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:hello@domain.com">hello@domain.com</a></p>
-                        <p><i class="fab fa-skype"></i> Skype: you_online</p>
+                        <h3>お問い合わせ先</h3>
+                        <p><i class="fas fa-map-marker-alt"></i>東京都渋谷区</p>
+                        <p><i class="fas fa-phone"></i> 電話番号: (0039) 333 12 68 347</p>
+                        <p><i class="fas fa-envelope"></i> Eメール: <a href="mailto:hello@domain.com">test@test.com</a></p>
                     </div>
                     <div class="col-md-4 footer-links wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                         <div class="row">
                             <div class="col">
-                                <h3>Links</h3>
+                                <h3>リンク</h3>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <p><a class="scroll-link" href="https://azmind.com/demo/bootstrap-footer/template-1/index.html#top-content">Home</a></p>
-                                <p><a href="https://azmind.com/demo/bootstrap-footer/template-1/index.html#">Features</a></p>
-                                <p><a href="https://azmind.com/demo/bootstrap-footer/template-1/index.html#">How it works</a></p>
-                                <p><a href="https://azmind.com/demo/bootstrap-footer/template-1/index.html#">Our clients</a></p>
+                                <p><a class="scroll-link" href="/home">ホーム</a></p>
+                                <p><a href="/products">商品一覧</a></p>
                             </div>
                             <div class="col-md-6">
-                                <p><a href="https://azmind.com/demo/bootstrap-footer/template-1/index.html#">Plans &amp; pricing</a></p>
-                                <p><a href="https://azmind.com/demo/bootstrap-footer/template-1/index.html#">Affiliates</a></p>
-                                <p><a href="https://azmind.com/demo/bootstrap-footer/template-1/index.html#">Terms</a></p>
+                                <p><a href="/makeorder">受注製作</a></p>
+                                <p><a href="/contact">お問い合わせ</a></p>
                             </div>
                         </div>
                     </div>

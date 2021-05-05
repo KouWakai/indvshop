@@ -8,7 +8,7 @@
       <img class="img" :src="imgsrc_2" alt="">
     </slide>
 
-    <!-- <hooper-pagination slot="hooper-addons"></hooper-pagination>   -->
+    <hooper-navigation slot="hooper-addons"></hooper-navigation>
   </hooper>
   </div>
 </template>
@@ -20,7 +20,7 @@ import './../../css/slider.css';
 import {
     Hooper,
     Slide,
-    Pagination as HooperPagination
+    Navigation as HooperNavigation
     } from 'hooper';
 
 export default {
@@ -28,7 +28,7 @@ export default {
   components: {
     Hooper,
     Slide,
-    //HooperPagination
+    HooperNavigation
   },
   data (){
       return {
