@@ -15,7 +15,7 @@
             </form>
         </div>
         <div class="col-3">
-        </div>　
+        </div>
     </div>
         <div class="row">
             @if(Cart::content()->isEmpty())
