@@ -25,6 +25,7 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/product/{id}', [ProductController::class, 'show']);
 Route::delete('/cart/{rowId}', [CartController::class, 'destroy']);
+Route::delete('/cart/all', [CartController::class, 'destroy']);
 Route::get('/cart', [CartController::class, 'index']);
 Route::post('/cart', [CartController::class, 'store']);
 
