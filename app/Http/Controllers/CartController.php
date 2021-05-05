@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Auth;
 
 
 class CartController extends Controller
@@ -35,6 +36,14 @@ class CartController extends Controller
 
     public function show()
     {
-        return view('cart.checkout');
+        $isLogin = Auth::check();
+
+        if($isLogin)
+        {
+            return view('cart.checkout');
+        }else
+        {
+            return view('cart.login_checkout');
+        }
     }
 }
