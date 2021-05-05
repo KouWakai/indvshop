@@ -32,4 +32,9 @@ class CartController extends Controller
         }
         return redirect('/cart');
     }
+
+    public function show()
+    {
+        return view('cart.checkout');
+    }
 }
