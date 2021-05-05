@@ -45,7 +45,10 @@
                     <h4 class="m-0 text-left pl-4">合計:</h4>
                     <h5 class="m-0 px-4">{{ Cart::total() }}円</h5>
                 </div>
-                <button class="btn btn-success btn-lg btn-block my-3">会計に進む</button>
+                <form action="/cart/checkout" method="post">
+                    @csrf
+                    <button class="btn btn-success btn-lg btn-block my-3">会計に進む</button>
+                </form>
             </div>
 
             @endif
