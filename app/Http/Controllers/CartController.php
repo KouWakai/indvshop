@@ -40,7 +40,8 @@ class CartController extends Controller
 
         if($isLogin)
         {
-            return view('cart.checkout');
+            $user = auth()->user();
+            return view('cart.checkout', compact('user'));
         }else
         {
             return view('cart.login_checkout');
