@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
@@ -23,12 +24,16 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [HomeController::class, 'index']);
+
 Route::get('/product/{id}', [ProductController::class, 'show']);
+
 Route::delete('/cart/{rowId}', [CartController::class, 'destroy']);
 Route::delete('/cart/all', [CartController::class, 'destroy']);
 Route::get('/cart', [CartController::class, 'index']);
 Route::post('/cart/checkout', [CartController::class, 'show']);
 Route::post('/cart', [CartController::class, 'store']);
+
+Route::post('/order', [OrderController::class, 'store']);
 
 Auth::routes();
 
@@ -50,5 +55,4 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'],function(){
     Route::get('users', [DashboardController::class, 'index'])->name('admin.users');
     Route::get('report', [DashboardController::class, 'index'])->name('admin.report');
     Route::get('config', [DashboardController::class, 'index'])->name('admin.config');
-
 });
