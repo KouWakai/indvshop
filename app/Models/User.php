@@ -56,4 +56,9 @@ class User extends Authenticatable
             $user->last_login = Carbon::now();
         });
     }
+
+    public function order()
+    {
+        return $this->hasOne(Order::class);
+    }
 }

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $guarded = [];
+
+    public function order()
+    {
+        return $this->belongsToMany(Order::class)->withPivot('quantity');
+    }
 }
