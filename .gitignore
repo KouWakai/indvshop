@@ -16,3 +16,13 @@ composer.lock
 /public/vendor
 app/Admin
 resources/lang
+resources/views/cart/checkout.blade copy.php
+public/IMG_0477.JPG
+public/IMG_0478.JPG
+public/pexels-julia-volk-5205652.jpg
+public/pexels-sourav-mishra-2747548.jpg
+public/pexels-sourav-mishra-5541995.jpg
+config/telescope.php
+app/Providers/TelescopeServiceProvider.php
+resources/css/dashboard.css
+resources/js/dashboard.js
