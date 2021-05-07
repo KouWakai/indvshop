@@ -101,7 +101,7 @@
                             <a href="/home"><h5 class="m-0 p-2 px-4 text-white">ホーム</h3></a>
                         </li>
                         <li class="nav-item">
-                            <a href="/products"><h5 class="m-0 p-2 px-4 text-white">商品一覧</h3></a>
+                            <a href="/product"><h5 class="m-0 p-2 px-4 text-white">商品一覧</h3></a>
                         </li>
                         <li class="nav-item">
                             <a href="/makeorder"><h5 class="m-0 p-2 px-4 text-white">受注制作</h3></a>

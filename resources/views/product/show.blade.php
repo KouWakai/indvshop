@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row align-items-center">
-        <div class="col-7 border-right">
+        <div class="col-7 py-4 border-right">
             <img src="/storage/{{ $product->image }}" class="w-100">
         </div>
         <div class="col-5 pb-3">
