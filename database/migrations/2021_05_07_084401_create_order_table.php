@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHomeTable extends Migration
+class CreateOrderTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateHomeTable extends Migration
      */
     public function up()
     {
-        Schema::create('homes', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('slideOne');
-            $table->string('slideTwo');
-            $table->string('imgOne');
+            $table->unsignedBigInteger('user_id');
+            $table->string('payment');
+            $table->boolean('paid');
+            $table->unsignedInteger('total');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateHomeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('homes');
+        Schema::dropIfExists('orders');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHomeTable extends Migration
+class CreatesOrderProductPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateHomeTable extends Migration
      */
     public function up()
     {
-        Schema::create('homes', function (Blueprint $table) {
+        Schema::create('order_product', function (Blueprint $table) {
             $table->id();
-            $table->string('slideOne');
-            $table->string('slideTwo');
-            $table->string('imgOne');
+            $table->unsignedBigInteger('order_id');
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedInteger('quantity');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateHomeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('homes');
+        Schema::dropIfExists('order_product');
     }
 }
