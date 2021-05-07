@@ -7,6 +7,13 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
+    public function index()
+    {
+        $product = Product::all();
+
+        return view('product.index', compact('product'));
+    }
+
     public function show($id){
         return view('product.show', ['product' => Product::findOrFail($id)]);
     }
