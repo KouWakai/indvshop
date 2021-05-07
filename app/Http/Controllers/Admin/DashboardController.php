@@ -7,12 +7,18 @@ use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Order;
 
 class DashboardController extends Controller
 {
     public function index(Request $request)
     {
         $path = $request->path();
+
+        if($path == 'admin/order'){
+          $order = Order::all();
+          return view($path, compact('order'));
+        }
 
         if($path == 'admin/users'){
             $users = User::all();
