@@ -233,7 +233,8 @@
     </div>
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">お客様情報</h4>
-      <form action="cart/checkout/ordered" method="post" class="needs-validation" novalidate="">
+      <form action="/order" method="post" class="needs-validation" novalidate="">
+      @csrf
 
         <div class="mb-3">
           <label class="font-weight-bold" for="username">お名前</label>
