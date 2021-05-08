@@ -30,7 +30,7 @@ class HomeController extends Controller
     {
         $home = Home::find(1);
         $product = Product::all();
-
+/*
         $imagePath = [$home->slideOne, $home->slideTwo];
 
         $bannerImg = $home->imgOne;
@@ -47,9 +47,9 @@ class HomeController extends Controller
             $imgpath = $prd->image;
             $img = Image::make(public_path("storage/{$imgpath}"))->fit(1000,1000);
             $img->save();
-        }
+        }*/
 
-        return view('home.index', compact('imagePath', 'bannerImg', 'product'));
+        return view('home.index', compact('home', 'product'));
     }
 
     public function show()

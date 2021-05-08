@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\Order;
 use App\Models\Customorder;
 use App\Models\Contact;
+use App\Models\Home;
 
 class DashboardController extends Controller
 {
@@ -50,6 +51,11 @@ class DashboardController extends Controller
           return view($path, compact('order', 'users',  'customorder' ,'contact'));
         }
 
+        if($path == 'admin/config'){
+          $home= home::find(1);
+          return view($path, compact('home'));
+        }
+
         return view($path);
     }
 
@@ -88,30 +94,77 @@ class DashboardController extends Controller
 
         }elseif($request->get('update'))
         {
-            $data = request()->validate([
-                'caption' => 'required',
-                'price' => 'required',
-                'image' => '',
-              ]);
+          $path = request()->path();
 
-              if(request('image')){
-                $imagePath = request('image')->store('uploads', 'public');
+          if($path == 'admin/config/update')
+          {
+            $data = request();
 
-                $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
-                $image->save();
+            $home = Home::find(1);
 
-                $imageArray = ['image' => $imagePath];
+            $imageArray  = array('slideOne' => $home->slideOne,'slideTwo' => $home->slideTwo,'imgOne' => $home->imgOne);
+
+              $imgkeys = array_keys($imageArray);
+              $arytmp = array();
+              $cnt = 0;
+
+              foreach($imgkeys as $key)
+              {
+                if( null != request($key))
+                {
+                  $imagePath = request($key)->store('uploads', 'public');
+
+                  $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 400);
+                  $image->save();
+
+                  $arytmp += array($key => $imagePath);
+
+                  $cnt++;
+                }
               }
 
-              $product->update([
-                'caption' => $data['caption'],
-                'price' => $data['price'],
-                'image' => $imagePath,
+                $imageArray = array_replace($imageArray, $arytmp);
+
+
+            if($cnt!=0)
+            {
+              $home->update([
+                'slideOne' => $imageArray['slideOne'],
+                'slideTwo' => $imageArray['slideTwo'],
+                'imgOne' => $imageArray['imgOne'],
               ]);
+            }
 
-              $product = Product::all();
+            return redirect('admin/config');
 
-              return view('admin.products', compact('product'));
+          }else
+          {
+            $data = request()->validate([
+              'caption' => 'required',
+              'price' => 'required',
+              'image' => '',
+            ]);
+
+            if(request('image')){
+              $imagePath = request('image')->store('uploads', 'public');
+
+              $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
+              $image->save();
+
+              $imageArray = ['image' => $imagePath];
+            }
+
+            $product->update([
+              'caption' => $data['caption'],
+              'price' => $data['price'],
+              'image' => $imagePath,
+            ]);
+
+            $product = Product::all();
+
+            return view('admin.products', compact('product'));
+          }
+
         }
     }
 
