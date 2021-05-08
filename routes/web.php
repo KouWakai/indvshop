@@ -36,6 +36,11 @@ Route::post('/cart', [CartController::class, 'store']);
 
 Route::post('/order', [OrderController::class, 'store']);
 
+Route::get('/customorder', [HomeController::class, 'show']);
+Route::post('/customorder', [HomeController::class, 'store']);
+
+Route::get('/contact', [HomeController::class, 'show']);
+
 Auth::routes();
 
 Route::group(['prefix' => 'admin'],function(){
@@ -54,6 +59,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'],function(){
     Route::post('products', [DashboardController::class, 'store'])->name('admin.products-store');
     Route::patch('products/{product}', [DashboardController::class, 'update']);
     Route::get('users', [DashboardController::class, 'index'])->name('admin.users');
-    Route::get('report', [DashboardController::class, 'index'])->name('admin.report');
+    Route::get('customorder', [DashboardController::class, 'index'])->name('admin.customorder');
+    Route::get('contact', [DashboardController::class, 'index'])->name('admin.contact');
     Route::get('config', [DashboardController::class, 'index'])->name('admin.config');
 });
