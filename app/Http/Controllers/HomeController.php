@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use App\Models\Home;
 use App\Models\Product;
+use App\Models\Customorder;
 
 class HomeController extends Controller
 {
@@ -48,5 +49,39 @@ class HomeController extends Controller
         }
 
         return view('home.index', compact('imagePath', 'bannerImg', 'product'));
+    }
+
+    public function show()
+    {
+        $path = request()->path();
+
+        if($path == 'customorder')
+        {
+            return view('customorder.show');
+        }
+        elseif($path == 'contact')
+        {
+            return view('contact.show');
+        }
+    }
+
+    public function store()
+    {
+        $data = request();
+
+        $imagePath = request()->image->store('uploads', 'public');
+
+        $img = Image::make(public_path("storage/{$imagePath}"))->fit(1000,1000);
+        $img->save();
+
+        $customorder = Customorder::create([
+            'username' => $data['username'],
+            'email' => $data['email'],
+            'image' => $imagePath,
+            'description' => $data['description'],
+          ]);
+
+
+        return view('customorder.store', compact('customorder'));
     }
 }

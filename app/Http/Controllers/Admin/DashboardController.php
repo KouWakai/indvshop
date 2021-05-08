@@ -8,6 +8,7 @@ use Intervention\Image\Facades\Image;
 use App\Models\User;
 use App\Models\Product;
 use App\Models\Order;
+use App\Models\Customorder;
 
 class DashboardController extends Controller
 {
@@ -29,6 +30,11 @@ class DashboardController extends Controller
             $product = Product::all();
             return view($path, compact('product'));
         }
+
+        if($path == 'admin/customorder'){
+          $customorder= Customorder::all();
+          return view($path, compact('customorder'));
+      }
 
         return view($path);
     }
@@ -59,7 +65,6 @@ class DashboardController extends Controller
 
     public function update(Request $request, Product $product)
     {
-        //dd($i = $request);
         if($request->get('delete'))
         {
             $product->delete();
