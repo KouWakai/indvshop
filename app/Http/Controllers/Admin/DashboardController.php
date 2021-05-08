@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Product;
 use App\Models\Order;
 use App\Models\Customorder;
+use App\Models\Contact;
 
 class DashboardController extends Controller
 {
@@ -34,7 +35,12 @@ class DashboardController extends Controller
         if($path == 'admin/customorder'){
           $customorder= Customorder::all();
           return view($path, compact('customorder'));
-      }
+        }
+
+        if($path == 'admin/contact'){
+          $contact= Contact::all();
+          return view($path, compact('contact'));
+        }
 
         return view($path);
     }

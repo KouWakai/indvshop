@@ -7,6 +7,7 @@ use Intervention\Image\Facades\Image;
 use App\Models\Home;
 use App\Models\Product;
 use App\Models\Customorder;
+use App\Models\Contact;
 
 class HomeController extends Controller
 {
@@ -67,21 +68,37 @@ class HomeController extends Controller
 
     public function store()
     {
-        $data = request();
+        $path = request()->path();
 
-        $imagePath = request()->image->store('uploads', 'public');
+        if($path == 'customorder')
+        {
+            $data = request();
 
-        $img = Image::make(public_path("storage/{$imagePath}"))->fit(1000,1000);
-        $img->save();
+            $imagePath = request()->image->store('uploads', 'public');
 
-        $customorder = Customorder::create([
-            'username' => $data['username'],
-            'email' => $data['email'],
-            'image' => $imagePath,
-            'description' => $data['description'],
-          ]);
+            $img = Image::make(public_path("storage/{$imagePath}"))->fit(1000,1000);
+            $img->save();
 
+            $customorder = Customorder::create([
+                'username' => $data['username'],
+                'email' => $data['email'],
+                'image' => $imagePath,
+                'description' => $data['description'],
+              ]);
 
-        return view('customorder.store', compact('customorder'));
+            return view('customorder.store', compact('customorder'));
+        }elseif($path == 'contact')
+        {
+            $data = request();
+
+            $contact = Contact::create([
+                'username' => $data['username'],
+                'email' => $data['email'],
+                'description' => $data['description'],
+              ]);
+
+            return view('contact.store', compact('contact'));
+        }
+
     }
 }
