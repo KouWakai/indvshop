@@ -28,9 +28,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="{{ url()->current() == route('admin.report') ? 'nav-link active' : 'nav-link'}}" href="/admin/report">
-              <span data-feather="bar-chart-2"></span>
-              レポート
+            <a class="{{ url()->current() == route('admin.customorder') ? 'nav-link active' : 'nav-link'}}" href="/admin/customorder">
+              <span data-feather="inbox"></span>
+              受注制作見積もり
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="{{ url()->current() == route('admin.contact') ? 'nav-link active' : 'nav-link'}}" href="/admin/contact">
+              <span data-feather="flag"></span>
+              お問い合わせ
             </a>
           </li>
           <li class="nav-item">

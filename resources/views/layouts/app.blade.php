@@ -104,7 +104,7 @@
                             <a href="/product"><h5 class="m-0 p-2 px-4 text-white">商品一覧</h3></a>
                         </li>
                         <li class="nav-item">
-                            <a href="/makeorder"><h5 class="m-0 p-2 px-4 text-white">受注制作</h3></a>
+                            <a href="/customorder"><h5 class="m-0 p-2 px-4 text-white">受注制作</h3></a>
                         </li>
                         <li class="nav-item">
                             <a href="/contact"><h5 class="m-0 p-2 px-4 text-white">お問い合わせ</h3></a>
