@@ -5,7 +5,7 @@
             <h1 class="h2">受注製作見積もり</h1>
     </div>
 
-                <h5>顧客リスト</h5>
+                <h5>見積もりリスト</h5>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
