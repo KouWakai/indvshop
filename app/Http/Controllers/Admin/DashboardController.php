@@ -42,6 +42,14 @@ class DashboardController extends Controller
           return view($path, compact('contact'));
         }
 
+        if($path == 'admin/dashboard'){
+          $order= Order::all()->count();
+          $users= User::all()->count();
+          $customorder= Customorder::all()->count();
+          $contact= Contact::all()->count();
+          return view($path, compact('order', 'users',  'customorder' ,'contact'));
+        }
+
         return view($path);
     }
 
