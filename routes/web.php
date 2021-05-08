@@ -63,4 +63,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'],function(){
     Route::get('customorder', [DashboardController::class, 'index'])->name('admin.customorder');
     Route::get('contact', [DashboardController::class, 'index'])->name('admin.contact');
     Route::get('config', [DashboardController::class, 'index'])->name('admin.config');
+    Route::patch('config/update', [DashboardController::class, 'update'])->name('admin.config-update');
 });
