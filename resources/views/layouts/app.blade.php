@@ -128,7 +128,7 @@
     <footer class="footer mt-auto">
         <div class="text-white bg-dark">
             <div class="container">
-                <div class="row">
+                <div class="row pt-2">
                     <div class="col-md-3 footer-about wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                         <h3>会社概要</h3>
                         <p>
@@ -151,10 +151,10 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <p><a class="scroll-link" href="/home">ホーム</a></p>
-                                <p><a href="/products">商品一覧</a></p>
+                                <p><a href="/product">商品一覧</a></p>
                             </div>
                             <div class="col-md-6">
-                                <p><a href="/makeorder">受注製作</a></p>
+                                <p><a href="/customorder">受注製作</a></p>
                                 <p><a href="/contact">お問い合わせ</a></p>
                             </div>
                         </div>

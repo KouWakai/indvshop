@@ -8,6 +8,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +27,8 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('/product/{id}', [ProductController::class, 'show']);
+
+Route::get('/product/search', [SearchController::class, 'index']);
 Route::get('/product', [ProductController::class, 'index']);
 
 Route::delete('/cart/{rowId}', [CartController::class, 'destroy']);

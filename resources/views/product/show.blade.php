@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
     <div class="row align-items-center">
-        <div class="col-7 py-4 border-right">
-            <img src="/storage/{{ $product->image }}" class="w-100">
+        <div class="d-flex justify-content-center col-7 my-5 border-right">
+            <img src="/storage/{{ $product->image }}" class="col-8 my-3 w-100">
         </div>
         <div class="col-5 pb-3">
             <div>

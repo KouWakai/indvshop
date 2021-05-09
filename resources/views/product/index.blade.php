@@ -16,6 +16,17 @@
       </div>
     </nav>
     <div class="col-9">
+
+      <div style="padding:20px 0; padding-left:0px;">
+        <form class="form-inline" action="/product/search">
+          <div class="form-group">
+            <input type="text" name="keyword" value="" class="form-control" placeholder="検索したいフレーズを入力してください">
+          </div>
+            <input type="submit" value="検索" class="btn btn-info">
+        </form>
+      </div>
+
+
         <div class="row d-flex justify-content-left">
             @foreach($product as $prd)
                 <div class="col-4 mt-2 py-3">
