@@ -9,22 +9,23 @@ class SearchController extends Controller
 {
     public function index()
     {
-        return view('product.index');
-        $keyword = request()->input('keyword');
-dd(1);
-        #クエリ生成
-        $query = Product::query();
 
-        #もしキーワードがあったら
+        $keyword = request()->input('keyword');
+
+        $product = Product::orderBy('created_at','desc')->get();
+
         if(!empty($keyword))
         {
-            $query->where('name','like','%'.$keyword.'%')->orWhere('mail','like','%'.$keyword.'%');
-        }
+            foreach($product as $key => $prd){
+                $data = $prd->where('caption', 'like', "%$keyword%")->get();
+            }
+            $result = $data;
 
-        #ページネーション
-        $data = $query->orderBy('created_at','desc')->paginate(10);
-        return view('product.index')->with('data',$data)
-        ->with('keyword',$keyword)
-        ->with('message','ユーザーリスト');
+            return view('search.index', compact('result'));
+        }else
+        {
+            $result = $product;
+            return view('search.index', compact('result'));
+        }
     }
 }
