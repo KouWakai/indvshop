@@ -10,6 +10,7 @@ jobs:
       - APP_KEY: base64:jjQIfZ1t+yLVB3FT16/CSNwdcNb9CTdHCyPR/HiS5/M=
       - DB_CONNECTION: circle_test
       - MYSQL_ALLOW_EMPTY_PASSWORD: true
+      - MYSQL_DATABASE: laravel
     working_directory: ~/ci-demo
     steps:
       - checkout
