@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 
 class UserRegisterTest extends TestCase
 {
@@ -14,11 +15,13 @@ class UserRegisterTest extends TestCase
      * @return void
      */
 
-
-    //use RefreshDatabase;
+    use WithoutMiddleware;
+    use RefreshDatabase;
 
     public function test_registerUser()
     {
+        $this->withoutExceptionHandling();
+
         $email = 'testuser@test.com';
         $this->post(route('register'), [
             'name' => 'testuser',
@@ -32,6 +35,8 @@ class UserRegisterTest extends TestCase
             'phone' => '001002003',
         ])
         ->assertStatus(302);
+
+
         $this->assertDatabaseHas('users', ['email' => $email]);
     }
 }
