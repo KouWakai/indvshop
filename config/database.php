@@ -91,7 +91,7 @@ return [
             'prefix_indexes' => true,
         ],
 
-        'circle_testing' => [
+        'circle_test' => [
             'driver' => 'mysql',
             'host' => '127.0.0.1',
             'port' => '3306',
