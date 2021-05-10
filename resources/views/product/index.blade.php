@@ -19,7 +19,7 @@
 
       <div style="padding:20px 0; padding-left:0px;">
         <form class="d-flex align-items-center" action="/search">
-            <input type="text" name="keyword" value="" class="form-control mx-3" placeholder="検索したいフレーズを入力してください">
+            <input type="text" name="keyword" class="form-control mx-3" placeholder="検索したいフレーズを入力してください">
             <input type="submit" value="検索" class="btn btn-primary p-1">
         </form>
       </div>
@@ -40,6 +40,12 @@
                 </div>
             @endforeach
         </div>
+
+          <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+              {{ $product->links() }}
+            </div>
+          </div>
     </div>
 </div>
 @endsection

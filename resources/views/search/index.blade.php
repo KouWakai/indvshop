@@ -39,6 +39,12 @@
                 </div>
             @endforeach
         </div>
+
+          <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+              {{ $result->links() }}
+            </div>
+          </div>
     </div>
 </div>
 @endsection

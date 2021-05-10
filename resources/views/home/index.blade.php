@@ -39,5 +39,9 @@
         @endforeach
     </div>
 
+    <div class="row d-flex justify-content-center py-2 mb-5">
+        <a href="/product"><h4>もっと見る</h4></a>
+    </div>
+
 </div>
 @endsection
