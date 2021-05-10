@@ -8,9 +8,12 @@
         <ul class="nav flex-column pl-5">
           <h5>カテゴリー</h5>
           <li class="nav-item">
-            <a class="{{ url()->current() == route('admin.dashboard') ? 'nav-link active' : 'nav-link'}} pl-0" href="/admin/dashboard">
-              ネイキッド
-            </a>
+              <form class="d-flex align-items-center" action="/category">
+                <input type="hidden" name="keyword" value="ネイキッド">
+                  <button type="submit" class="btn btn-outline-secondary btn-sm">
+                    ネイキッド
+                  </button>
+              </form>
           </li>
         </ul>
       </div>

@@ -73,6 +73,23 @@
                             @enderror
                     </div>
 
+                    <div class="form-group row">
+                        <label for="category" class="col-md-4 col-form-label">カテゴリー</label>
+
+                            <input  id="category"
+                                    type="text"
+                                    class="form-control @error('category') is-invalid @enderror"
+                                    name="category"
+                                    value="{{ old('name') }}"
+                                    autocomplete="name" autofocus>
+
+                            @error('category')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                    </div>
+
                     <div class="row pb-3">
                     <label for="image" class="col-md-4 col-form-label">商品画像</label>
 
@@ -157,6 +174,23 @@
                         </span>
                     @enderror
             </div>
+
+            <div class="form-group row">
+                        <label for="category" class="col-md-4 col-form-label">カテゴリー</label>
+
+                            <input  id="category"
+                                    type="text"
+                                    class="form-control @error('category') is-invalid @enderror"
+                                    name="category"
+                                    value="{{ old('name') }}"
+                                    autocomplete="name" autofocus>
+
+                            @error('category')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                    </div>
 
             <div class="row">
             <label for="image" class="col-md-4 col-form-label">商品画像</label>
