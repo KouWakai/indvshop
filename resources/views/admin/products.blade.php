@@ -98,6 +98,12 @@
         @endforeach
     </div>
 
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            {{ $product->links() }}
+        </div>
+    </div>
+
     <div id="AddPrdBtn">
         <button type="button" class="btn btn-primary btn-floating button" data-toggle="modal" data-target="#AddPrdModal">
         <h3 class="m-0">商品を追加する</h3>
