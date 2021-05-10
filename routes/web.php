@@ -28,7 +28,8 @@ Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('/product/{id}', [ProductController::class, 'show']);
 
-Route::get('/search', [SearchController::class, 'index']);
+Route::get('/search', [SearchController::class, 'index'])->name('search');
+Route::get('/category', [SearchController::class, 'index'])->name('category');
 Route::get('/product', [ProductController::class, 'index']);
 
 Route::delete('/cart/{rowId}', [CartController::class, 'destroy']);
