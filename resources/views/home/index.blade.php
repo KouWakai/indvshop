@@ -12,11 +12,15 @@
 <div class="container">
 
 
-    <div class="d-flex m-5" style="height:350px">
+    <div class="d-flex m-5 align-items-center" style="height:350px">
         <img src="/storage/{{ $home->imgOne ?? ''}}" class="col-7 p-0 h-100 border rounded-left border-right-0" alt="">
-        <span class="d-flex align-items-center justify-content-center col-5 p-0 bg-white h-100 border rounded-right border-letf-0">
-            <h5 class="text-center font-weight-bold">写真からあなたのバイクのペーパークラフトを<br>作成いたします</h5>
-        </span>
+        <div class="d-flex align-items-center justify-content-center col-5 py-4 bg-white h-100 border rounded-right border-letf-0">
+            <div>
+                <h5 class="text-center font-weight-bold">写真からあなたのバイクのペーパークラフトを<br>作成いたします</h5>
+                <a href="/customorder"><h5 class="text-center font-weight-bold mt-3">お見積りはこちらから</h5></a>
+            </div>
+        </div>
+
     </div>
 
     <div class="row p-4 justify-content-center">
