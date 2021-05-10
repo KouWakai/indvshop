@@ -9,23 +9,18 @@ class SearchController extends Controller
 {
     public function index()
     {
-
         $keyword = request()->input('keyword');
 
         $product = Product::orderBy('created_at','desc')->get();
 
         if(!empty($keyword))
         {
-            foreach($product as $key => $prd){
-                $data = $prd->where('caption', 'like', "%$keyword%")->get();
-            }
-            $result = $data;
-
-            return view('search.index', compact('result'));
+            $result = Product::where('caption', 'like', "%$keyword%")->orderBy('created_at','desc')->paginate(9);
         }else
         {
-            $result = $product;
-            return view('search.index', compact('result'));
+            $result = Product::orderBy('created_at','desc')->paginate(9);
         }
+
+        return view('search.index', compact('result'));
     }
 }

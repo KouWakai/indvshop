@@ -29,7 +29,7 @@ class HomeController extends Controller
     public function index(Home $home, Product $product)
     {
         $home = Home::find(1);
-        $product = Product::all();
+        $product = Product::orderBy('created_at','desc')->take(8)->get();
 /*
         $imagePath = [$home->slideOne, $home->slideTwo];
 
