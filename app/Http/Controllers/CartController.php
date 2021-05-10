@@ -44,6 +44,12 @@ class CartController extends Controller
             return view('cart.checkout', compact('user'));
         }else
         {
+            $path = request()->path();
+
+            if($path == 'cart/checkout/guest')
+            {
+                return view('cart.checkout');
+            }
             return view('cart.login_checkout');
         }
     }

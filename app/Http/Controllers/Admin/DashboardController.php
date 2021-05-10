@@ -19,7 +19,7 @@ class DashboardController extends Controller
         $path = $request->path();
 
         if($path == 'admin/order'){
-          $order = Order::all();
+          $order = Order::orderBy('created_at','desc')->get();
           return view($path, compact('order'));
         }
 
@@ -29,7 +29,7 @@ class DashboardController extends Controller
         }
 
         if($path == 'admin/products'){
-            $product = Product::all();
+            $product = Product::orderBy('created_at','desc')->paginate(12);
             return view($path, compact('product'));
         }
 
