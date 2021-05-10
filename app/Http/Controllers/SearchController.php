@@ -13,12 +13,24 @@ class SearchController extends Controller
 
         $product = Product::orderBy('created_at','desc')->get();
 
-        if(!empty($keyword))
+        if(url()->current() == route('search'))
         {
-            $result = Product::where('caption', 'like', "%$keyword%")->orderBy('created_at','desc')->paginate(9);
-        }else
+            if(!empty($keyword))
+            {
+                $result = Product::where('caption', 'like', "%$keyword%")->orderBy('created_at','desc')->paginate(9);
+            }else
+            {
+                $result = Product::orderBy('created_at','desc')->paginate(9);
+            }
+        }elseif(url()->current() == route('category'))
         {
-            $result = Product::orderBy('created_at','desc')->paginate(9);
+            if(!empty($keyword))
+            {
+                $result = Product::where('category', 'like', "%$keyword%")->orderBy('created_at','desc')->paginate(9);
+            }else
+            {
+                $result = Product::orderBy('created_at','desc')->paginate(9);
+            }
         }
 
         return view('search.index', compact('result'));

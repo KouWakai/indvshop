@@ -66,6 +66,7 @@ class DashboardController extends Controller
           $data = request()->validate([
             'caption' => 'required',
             'price' => 'required',
+            'category' => 'required',
             'image' => 'required|image',
           ]);
 
@@ -77,6 +78,7 @@ class DashboardController extends Controller
           $product = Product::create([
             'caption' => $data['caption'],
             'price' => $data['price'],
+            'category' => $data['category'],
             'image' => $imagePath,
           ]);
 
@@ -142,6 +144,7 @@ class DashboardController extends Controller
             $data = request()->validate([
               'caption' => 'required',
               'price' => 'required',
+              'category' => 'required',
               'image' => '',
             ]);
 
@@ -157,12 +160,13 @@ class DashboardController extends Controller
             $product->update([
               'caption' => $data['caption'],
               'price' => $data['price'],
+              'category' => $data['category'],
               'image' => $imagePath,
             ]);
 
-            $product = Product::all();
+            $product = Product::orderBy('created_at','desc')->paginate(12);
 
-            return view('admin.products', compact('product'));
+            return redirect('admin/products');
           }
 
         }
