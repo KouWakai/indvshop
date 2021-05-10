@@ -34,6 +34,8 @@ Route::get('/product', [ProductController::class, 'index']);
 Route::delete('/cart/{rowId}', [CartController::class, 'destroy']);
 Route::delete('/cart/all', [CartController::class, 'destroy']);
 Route::get('/cart', [CartController::class, 'index']);
+Route::get('/cart/checkout/guest', [CartController::class, 'show']);
+Route::get('/cart/checkout', [CartController::class, 'show']);
 Route::post('/cart/checkout', [CartController::class, 'show']);
 Route::post('/cart', [CartController::class, 'store']);
 
