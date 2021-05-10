@@ -15,8 +15,9 @@ class CartController extends Controller
 
     public function store(){
         $product = Product::find(request()->input('id'));
+        $data = request();
 
-        \Cart::add(['id' => $product->id, 'name' => $product->caption, 'qty' => 1, 'price' => $product->price, 'weight' => 0,'options' => ['image' => $product->image]]);
+        \Cart::add(['id' => $product->id, 'name' => $product->caption, 'qty' => $data['amount'], 'price' => $product->price, 'weight' => 0,'options' => ['image' => $product->image]]);
 
         return view('cart.index');
     }

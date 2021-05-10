@@ -19,14 +19,14 @@ class OrderController extends Controller
         if($isLogin)
         {
             $order = auth()->user()->order()->create([
-                'payment' => 'クレジット',
+                'payment' => $data['paymentmethod'],
                 'paid' => 0,
                 'total' => $total,
             ]);
         }else
         {
             $order = Order::create([
-                'payment' => 'クレジット',
+                'payment' => $data['paymentmethod'],
                 'paid' => 0,
                 'total' => $total,
                 'username' => $data['username'],
