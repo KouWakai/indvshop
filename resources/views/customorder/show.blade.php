@@ -18,7 +18,7 @@
                         <div class="mx-3 px-5">
                             <div class="form-group">
                                 <label for="email">画像</label>
-                                    <input type="file", class="form-control-file" id="image" name="image">
+                                    <input type="file", class="form-control-file" id="image" name="image" required="">
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
