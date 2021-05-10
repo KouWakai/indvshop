@@ -5,26 +5,38 @@
     <div class="row m-0 pt-5">
         <div class="col-6 mt-5 border-right">
             <div class="d-flex justify-content-center">
-            <form action="{{ route('login') }}" method="POST">
+            <form method="POST" action="{{ route('login') }}">
                 @csrf
-            <h2>Returning Customer</h2>
-                <div class="py-2">
-                <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
+            <h3>会員登録されているお客様</h3>
+                <div class="p-2">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
-                <div class="py-2">
-                <input type="password" id="password" name="password" value="{{ old('password') }}" placeholder="Password" required>
+                <div class="p-2">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
 
-                <div class="login-container">
+                <div class="p-2">
                     <button type="submit" class="btn-sm btn-primary">ログイン</button>
                     <label>
-                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> ログイン情報を記録する
                     </label>
                 </div>
 
-                <a href="{{ route('password.request') }}">
-                    <span class="py-2">Forgot Your Password?</span>
+                <a href="{{ route('password.request') }}" class="p-2">
+                    <span class="py-2">パスワードを忘れた場合</span>
                 </a>
 
             </form>
@@ -34,13 +46,16 @@
         <div class="col-6 mt-5">
             <div class="d-flex justify-content-center">
                     <div>
-                                        <h2>New Customer</h2>
-                    <p>Save time now.</p>
-                    <p>You don't need an account to checkout.</p>
-                    <a href="#" class="auth-button-hollow">Continue as Guest</a>
-                    <p>Save time later.</p>
-                    <p>Create an account for fast checkout.</p>
-                    <a href="{{ route('register') }}" class="auth-button-hollow">Create Account</a>
+                    <h3>初めてお買い物されるお客様</h3>
+                    <div class="p-3">
+                        <p>会員登録せずに注文できます</p>
+                        <a href="/cart/checkout/guest" class="btn-sm btn-primary">ゲストとして注文する</a>
+                    </div>
+                    <div class="p-3">
+                        <p>会員登録することで次回の注文をスムーズに行えます</p>
+                        <a href="{{ route('register') }}" class="btn-sm btn-primary">会員登録する</a>
+                    </div>
+
                     </div>
 
             </div>
