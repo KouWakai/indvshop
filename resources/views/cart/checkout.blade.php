@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 @guest
 <div class="container">
       <div class="row py-5">
@@ -111,16 +112,17 @@
 
         <div class="d-block my-3">
           <div class="custom-control custom-radio">
-            <input id="credit" name="paymentmethod" type="radio" class="custom-control-input" checked="" required="">
+            <input id="credit" name="paymentmethod" value="クレジット" type="radio" class="custom-control-input" onclick="checkpayment('block');" checked="" required="">
             <label class="custom-control-label" for="credit">クレジットカード</label>
           </div>
           <div class="custom-control custom-radio">
-            <input id="debit" name="paymentmethod" type="radio" class="custom-control-input" required="">
-            <label class="custom-control-label" for="debit">銀行振込</label>
+            <input id="bank" name="paymentmethod" value="銀行" type="radio" class="custom-control-input" onclick="checkpayment('none');" required="">
+            <label class="custom-control-label" for="bank">銀行振込</label>
           </div>
         </div>
 
-          <div class="row">
+        <div id="PaymentMethodCredit">
+            <div class="row">
             <div class="col-md-6 mb-3">
               <label for="cc-name">クレジットカード名義</label>
               <input type="text" class="form-control" id="cc-name" placeholder="" required="">
@@ -153,6 +155,8 @@
               </div>
             </div>
           </div>
+        </div>
+
           <hr class="mb-4">
               <div class="form-group row mb-0 text-center">
                   <div class="col-md-6 offset-md-3">
@@ -249,48 +253,51 @@
 
         <div class="d-block my-3">
           <div class="custom-control custom-radio">
-            <input id="credit" name="paymentmethod" type="radio" class="custom-control-input" checked="" required="">
+            <input id="credit" name="paymentmethod" value="クレジット" type="radio" class="custom-control-input" onclick="checkpayment('block');" checked="" required="">
             <label class="custom-control-label" for="credit">クレジットカード</label>
           </div>
           <div class="custom-control custom-radio">
-            <input id="debit" name="paymentmethod" type="radio" class="custom-control-input" required="">
-            <label class="custom-control-label" for="debit">銀行振込</label>
+            <input id="bank" name="paymentmethod" value="銀行" type="radio" class="custom-control-input" onclick="checkpayment('none');" required="">
+            <label class="custom-control-label" for="bank">銀行振込</label>
           </div>
         </div>
 
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="cc-name">クレジットカード名義</label>
-              <input type="text" class="form-control" id="cc-name" placeholder="" required="">
-              <small class="text-muted">性・名をアルファベットで</small>
-              <div class="invalid-feedback">
-                Name on card is required
+          <div id="PaymentMethodCredit">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="cc-name">クレジットカード名義</label>
+                <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                <small class="text-muted">性・名をアルファベットで</small>
+                <div class="invalid-feedback">
+                  Name on card is required
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cc-number">クレジットカード番号</label>
+                <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
               </div>
             </div>
-            <div class="col-md-6 mb-3">
-              <label for="cc-number">クレジットカード番号</label>
-              <input type="text" class="form-control" id="cc-number" placeholder="" required="">
-              <div class="invalid-feedback">
-                Credit card number is required
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label for="cc-expiration">有効期限</label>
+                <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                <div class="invalid-feedback">
+                  Expiration date required
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="cc-cvv">CVV</label>
+                <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                <div class="invalid-feedback">
+                  Security code required
+                </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-3 mb-3">
-              <label for="cc-expiration">有効期限</label>
-              <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
-              <div class="invalid-feedback">
-                Expiration date required
-              </div>
-            </div>
-            <div class="col-md-3 mb-3">
-              <label for="cc-cvv">CVV</label>
-              <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
-              <div class="invalid-feedback">
-                Security code required
-              </div>
-            </div>
-          </div>
+
           <hr class="mb-4">
               <div class="form-group row mb-0 text-center">
                   <div class="col-md-6 offset-md-3">
@@ -304,5 +311,13 @@
   </div>
 </div>
 @endguest
+
+<script>
+  function checkpayment(disp)
+  {
+      document.getElementById('PaymentMethodCredit').style.display = disp;
+  }
+</script>
+
 
 @endsection
