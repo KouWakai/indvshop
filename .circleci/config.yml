@@ -9,6 +9,8 @@ jobs:
          - APP_ENV: testing
          - APP_KEY: base64:jjQIfZ1t+yLVB3FT16/CSNwdcNb9CTdHCyPR/HiS5/M=
          - DB_CONNECTION: circle_test
+         - DB_USERNAME=root
+         - DB_PASSWORD=password
          - MYSQL_ALLOW_EMPTY_PASSWORD: true
          - MYSQL_DATABASE: circle_test
     steps:
