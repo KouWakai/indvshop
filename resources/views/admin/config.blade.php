@@ -11,17 +11,17 @@
             <div class="col-8 p-4">
                 <h4>スライド</h4>
                 <div class="py-3">スライド画像1</div>
-                <img src="/storage/{{ $home->slideOne }}" class="w-100" alt="">
+                <img src="{{ $home->slideOne }}" class="w-100" alt="">
                 <input type="file", class="form-control-file py-3" id="slideOne" name="slideOne">
 
                 <div class="py-3">スライド画像2</div>
-                <img src="/storage/{{ $home->slideTwo }}" class="w-100" alt="">
+                <img src="{{ $home->slideTwo }}" class="w-100" alt="">
                 <input type="file", class="form-control-file py-3" id="slideTwo" name="slideTwo">
             </div>
             <div class="col-8 p-4">
                 <h4>バナー</h4>
                 <div class="py-3">バナー画像</div>
-                <img src="/storage/{{ $home->imgOne }}" class="w-100" alt="">
+                <img src="{{ $home->imgOne }}" class="w-100" alt="">
                 <input type="file", class="form-control-file py-3" id="imgOne" name="imgOne">
             </div>
             <div class="col-8 p-4 mb-5 text-center">

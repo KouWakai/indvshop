@@ -32,7 +32,7 @@
             @foreach($product as $prd)
                 <div class="col-4 mt-2 py-3">
                     <a href="/product/{{ $prd->id }}">
-                        <img src="/storage/{{ $prd->image ?? ''}}" alt="" class="w-100 border rounded-top border-bottom-0">
+                        <img src="{{ $prd->image ?? ''}}" alt="" class="w-100 border rounded-top border-bottom-0">
                     </a>
                     <a href="/product/{{ $prd->id }}">
                         <div class="text-center border rounded-bottom bg-white text-dark border-top-0">

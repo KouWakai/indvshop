@@ -15,7 +15,7 @@
                             <label class="col-md-4 font-weight-bold">画像</label>
                         </div>
                         <div class="row">
-                            <span class="offset-1"><img src="/storage/{{ $ctmord->image }}" width="300px" height="300px"　alt=""></span>
+                            <span class="offset-1"><img src="{{ $ctmord->image }}" width="300px" height="300px"　alt=""></span>
                         </div>
                         <div class="row">
                             <label class="col-md-4 font-weight-bold">備考</label>

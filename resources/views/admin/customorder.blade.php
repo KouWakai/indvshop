@@ -24,7 +24,7 @@
               <td>{{ $ctmord->id }}</td>
               <td>{{ $ctmord->username }}</td>
               <td>{{ $ctmord->email }}</td>
-              <td data-toggle="modal" data-target="#ShowModal-{{ $ctmord->id }}"><img src="/storage/{{ $ctmord->image }}" width="25vw" height="25vh"　alt=""></td>
+              <td data-toggle="modal" data-target="#ShowModal-{{ $ctmord->id }}"><img src="{{ $ctmord->image }}" width="25vw" height="25vh"　alt=""></td>
               <td data-toggle="modal" data-target="#ShowModal-{{ $ctmord->id }}"><span class="d-inline-block text-truncate" style="max-width: 150px;">{{ $ctmord->description }}</span></td>
               <td>
                 <a href="">
