@@ -8,11 +8,27 @@
         <ul class="nav flex-column pl-5">
           <h5>カテゴリー</h5>
           <li class="nav-item">
-              <form class="d-flex align-items-center" action="/category">
-                <input type="hidden" name="keyword" value="ネイキッド">
-                  <button type="submit" class="btn btn-outline-secondary btn-sm">
-                    ネイキッド
+              <form class="" action="/category">
+              <div class="p-2">
+                  <button type="submit" name="keyword" class="btn btn-outline-secondary btn-sm" value="革財布">
+                    革財布
                   </button>
+              </div>
+              <div class="p-2">
+                  <button type="submit" name="keyword" class="btn btn-outline-secondary btn-sm" value="バッグ">
+                    バッグ
+                  </button>
+              </div>
+              <div class="p-2">
+                  <button type="submit" name="keyword" class="btn btn-outline-secondary btn-sm" value="ベルト">
+                    ベルト
+                  </button>
+              </div>
+              <div class="p-2">
+                  <button type="submit" name="keyword" class="btn btn-outline-secondary btn-sm" value="手帳・小物">
+                    手帳・小物
+                  </button>
+              </div>
               </form>
           </li>
         </ul>

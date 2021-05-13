@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>PaperCraft</title>
+    <title>LeatherCraft</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -19,13 +19,13 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body class="d-flex flex-column h-100 bg-paleorange">
+<body class="d-flex flex-column h-100 bg-lightbrown">
     <div id="app">
     <div>
         <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/home') }}">
-                    MotorCycle
+                    LeatherCraft
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -120,7 +120,7 @@
 
     @show
 
-        <main class="bg-paleorange">
+        <main class="bg-lightbrown">
             @yield('content')
         </main>
     </div>
@@ -132,15 +132,15 @@
                     <div class="col-md-3 footer-about wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                         <h3>会社概要</h3>
                         <p>
-                            私たちは常にあなたの日常の作業では、当社の製品とあなたを助けるために新しい創造的なアイデアを探している会社です。
+                            革製品の製造販売、受注製作を行っております
                         </p>
                         <p>© Company Inc.</p>
                     </div>
                     <div class="col-md-4 offset-md-1 footer-contact wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
                         <h3>お問い合わせ先</h3>
                         <p><i class="fas fa-map-marker-alt"></i>東京都渋谷区</p>
-                        <p><i class="fas fa-phone"></i> 電話番号: (0039) 333 12 68 347</p>
-                        <p><i class="fas fa-envelope"></i> Eメール: <a href="mailto:hello@domain.com">test@test.com</a></p>
+                        <p><i class="fas fa-phone"></i> 電話番号: (0957) 000 000</p>
+                        <p><i class="fas fa-envelope"></i> Eメール: <a href="mailto:hello@domain.com">leather@craft.com</a></p>
                     </div>
                     <div class="col-md-4 footer-links wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                         <div class="row">

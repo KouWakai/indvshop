@@ -17,7 +17,7 @@
         <img src="{{ $home->imgOne ?? ''}}" class="col-7 p-0 h-100 border rounded-left border-right-0" alt="">
         <div class="d-flex align-items-center justify-content-center col-5 py-4 bg-white h-100 border rounded-right border-letf-0">
             <div>
-                <h5 class="text-center font-weight-bold">写真からあなたのバイクのペーパークラフトを<br>作成いたします</h5>
+                <h5 class="text-center font-weight-bold">革製品のオーダーメイド<br>承っております</h5>
                 <a href="/customorder"><h5 class="text-center font-weight-bold mt-3">お見積りはこちらから</h5></a>
             </div>
         </div>
