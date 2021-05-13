@@ -14,7 +14,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        echo "<script>setTimeout(function(){ window.location.href = 'http://127.0.0.1:8000/admin/dashboard'; }, 3000);</script>";
+        echo "<script>setTimeout(function(){ window.location.href = '/admin/dashboard'; }, 3000);</script>";
         return view('admin.home');
     }
 }

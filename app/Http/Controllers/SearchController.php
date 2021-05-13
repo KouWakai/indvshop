@@ -9,7 +9,7 @@ class SearchController extends Controller
 {
     public function index()
     {
-        $keyword = request()->input('keyword');
+        $keyword = request()->keyword;
 
         $product = Product::orderBy('created_at','desc')->get();
 
