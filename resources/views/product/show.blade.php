@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row align-items-center">
         <div class="d-flex justify-content-center col-7 my-5 border-right">
-            <img src="/storage/{{ $product->image }}" class="col-8 my-3 w-100">
+            <img src="{{ $product->image }}" class="col-8 my-3 w-100">
         </div>
         <div class="col-5 pb-3">
             <div class="font-weight-bold text-center">
