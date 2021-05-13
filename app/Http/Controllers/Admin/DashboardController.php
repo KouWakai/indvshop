@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use App\Models\User;
 use App\Models\Product;
@@ -70,16 +72,25 @@ class DashboardController extends Controller
             'image' => 'required|image',
           ]);
 
-          $imagePath = $request->image->store('uploads', 'public');
+          $file = request()->file('image');
 
-          $img = Image::make(public_path("storage/{$imagePath}"))->fit(1000,1000);
-          $img->save();
+          $name = $file->getClientOriginalName();
+
+          $tmpPath = storage_path('/') . $name;
+
+          $image = Image::make($file)->fit(1000, 1000);
+
+          $image->save($tmpPath);
+
+          Storage::disk('s3')->putFileAs('/uploads', new File($tmpPath), $name, 'public');
+
+          $s3path = Storage::disk('s3')->url('uploads/' . $name);
 
           $product = Product::create([
             'caption' => $data['caption'],
             'price' => $data['price'],
             'category' => $data['category'],
-            'image' => $imagePath,
+            'image' => $s3path,
           ]);
 
         return redirect($path);
@@ -114,12 +125,21 @@ class DashboardController extends Controller
               {
                 if( null != request($key))
                 {
-                  $imagePath = request($key)->store('uploads', 'public');
+                  $file = request()->file($key);
 
-                  $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 400);
-                  $image->save();
+                  $name = $file->getClientOriginalName();
 
-                  $arytmp += array($key => $imagePath);
+                  $tmpPath = storage_path('/') . $name;
+
+                  $image = Image::make($file)->fit(1000, 400);
+
+                  $image->save($tmpPath);
+
+                  Storage::disk('s3')->putFileAs('/uploads', new File($tmpPath), $name, 'public');
+
+                  $s3path = Storage::disk('s3')->url('uploads/' . $name);
+
+                  $arytmp += array($key => $s3path);
 
                   $cnt++;
                 }

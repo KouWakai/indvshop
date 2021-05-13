@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use App\Models\Home;
 use App\Models\Product;
@@ -74,15 +76,24 @@ class HomeController extends Controller
         {
             $data = request();
 
-            $imagePath = request()->image->store('uploads', 'public');
+          $file = request()->file('image');
 
-            $img = Image::make(public_path("storage/{$imagePath}"))->fit(1000,1000);
-            $img->save();
+          $name = $file->getClientOriginalName();
+
+          $tmpPath = storage_path('/') . $name;
+
+          $image = Image::make($file)->fit(1000, 1000);
+
+          $image->save($tmpPath);
+
+          Storage::disk('s3')->putFileAs('/uploads/customorder', new File($tmpPath), $name, 'public');
+
+          $s3path = Storage::disk('s3')->url('uploads/customorder/' . $name);
 
             $customorder = Customorder::create([
                 'username' => $data['username'],
                 'email' => $data['email'],
-                'image' => $imagePath,
+                'image' => $s3path,
                 'description' => $data['description'],
               ]);
 
