@@ -3,12 +3,14 @@ jobs:
   build:
     docker:
       - image: circleci/php:7.3.0-node-browsers
-      - image: circleci/mysql:5.7-ram
         environment:
          - APP_DEBUG: true
          - APP_ENV: testing
          - APP_KEY: base64:jjQIfZ1t+yLVB3FT16/CSNwdcNb9CTdHCyPR/HiS5/M=
          - DB_CONNECTION: circle_test
+         
+      - image: circleci/mysql:5.7-ram
+        environment:
          - MYSQL_ROOT_HOST: '%'
          - MYSQL_ALLOW_EMPTY_PASSWORD: true
          - MYSQL_DATABASE: circle_test
