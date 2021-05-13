@@ -4,13 +4,13 @@ jobs:
     docker:
       - image: circleci/php:7.3.0-node-browsers
       - image: circleci/mysql:5.7-ram
-    environment:
-      - APP_DEBUG: true
-      - APP_ENV: testing
-      - APP_KEY: base64:jjQIfZ1t+yLVB3FT16/CSNwdcNb9CTdHCyPR/HiS5/M=
-      - DB_CONNECTION: circle_test
-      - MYSQL_ALLOW_EMPTY_PASSWORD: true
-      - MYSQL_DATABASE: circle_test
+        environment:
+          - APP_DEBUG: true
+          - APP_ENV: testing
+          - APP_KEY: base64:jjQIfZ1t+yLVB3FT16/CSNwdcNb9CTdHCyPR/HiS5/M=
+          - DB_CONNECTION: circle_test
+          - MYSQL_ALLOW_EMPTY_PASSWORD: true
+          - MYSQL_DATABASE: circle_test
     steps:
       - checkout
       - run:
@@ -33,8 +33,7 @@ jobs:
       - run:
           name: Run PHPUnit
           command: vendor/bin/phpunit
-
-      deploy:
+    deploy:
           machine:
             image: circleci/classic:edge
           steps:
@@ -42,8 +41,7 @@ jobs:
                 fingerprints:
                   - 2f:ef:be:7a:a3:41:37:30:c2:55:52:57:1a:cc:e9:38
             - run: ssh ${USER_NAME}@${HOST_NAME} 'cd /home/ec2-user/laravel-docker/src/indvshop && git pull origin 16-S3UpDownload'
-
-      workflows:
+    workflows:
         version: 2
         build_and_deploy:
           jobs:
