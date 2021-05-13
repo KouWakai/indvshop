@@ -37,14 +37,14 @@ jobs:
           name: Run PHPUnit
           command: vendor/bin/phpunit
 
-    deploy:
-      machine:
-        image: circleci/classic:edge
-      steps:
-        - add_ssh_keys:
-            fingerprints:
-            - 2f:ef:be:7a:a3:41:37:30:c2:55:52:57:1a:cc:e9:38
-        - run: ssh ${USER_NAME}@${HOST_NAME} 'cd /home/ec2-user/laravel-docker/src/indvshop && git pull origin master'
+  deploy:
+    machine:
+      image: circleci/classic:edge
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+          - 2f:ef:be:7a:a3:41:37:30:c2:55:52:57:1a:cc:e9:38
+      - run: ssh ${USER_NAME}@${HOST_NAME} 'cd /home/ec2-user/laravel-docker/src/indvshop && git pull origin master'
 workflows:
     version: 2
     deploy:
