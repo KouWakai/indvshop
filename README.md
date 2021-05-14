@@ -46,6 +46,5 @@ URL:http://ec2-13-208-45-230.ap-northeast-3.compute.amazonaws.com/home
     CPU core i5 3450  
     メモリ 18gb  
     グラフィックボード gtx1050ti  
-* ノートPC(出先にて使用)
+* ノートPC(出先にて使用)  
     macbook air 13inch mid 2011(os sierra)
-* 
