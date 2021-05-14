@@ -16,7 +16,7 @@
 
                     <div>ログインしました。</div>
                     <div>管理画面を自動で読み込みます。3秒経っても読み込まない場合は下のリンクをクリックしてください</div>
-                    <a href="dashboard">管理画面へ</href>
+                    <a href="dashboard">管理画面へ</a>
                 </div>
             </div>
         </div>
