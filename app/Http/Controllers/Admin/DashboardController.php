@@ -101,7 +101,7 @@ class DashboardController extends Controller
         if($request->get('delete'))
         {
             $product->delete();
-            $product = Product::all();
+            $product = Product::orderBy('created_at','desc')->paginate(12);
 
             return view('admin.products', compact('product'));
 
