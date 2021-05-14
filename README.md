@@ -40,6 +40,9 @@ URL:http://ec2-13-208-45-230.ap-northeast-3.compute.amazonaws.com/home
 * ゲスト注文機能
 * 見積もり・お問い合わせ管理機能
 
+# 画面一覧
+![IndvshopsPages](https://user-images.githubusercontent.com/35868597/118271642-83bea600-b4fc-11eb-8361-b6040edac694.png)
+
 # 開発環境
 * デスクトップPC
     os Linux ubuntu 20.04LTS  
