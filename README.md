@@ -1,6 +1,8 @@
 # indvshop
 個人でネット販売されたい方向けの小規模なECサイトです。
 現在はポートフォリオとしてレザークラフト・革細工の販売サイトのようなデザインにしてあります。  
+
+
 URL:http://ec2-13-208-45-230.ap-northeast-3.compute.amazonaws.com/home
 
 # 仕様技術
