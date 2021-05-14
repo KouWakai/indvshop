@@ -45,6 +45,11 @@ URL:http://ec2-13-208-45-230.ap-northeast-3.compute.amazonaws.com/home
 # 画面一覧
 ![IndvshopsPages](https://user-images.githubusercontent.com/35868597/118271642-83bea600-b4fc-11eb-8361-b6040edac694.png)
 
+# インフラ構成図
+
+![awsstructure (2)](https://user-images.githubusercontent.com/35868597/118274130-b8802c80-b4ff-11eb-8315-3e045d974d26.png)
+
+
 # 開発環境
 * デスクトップPC
     os Linux ubuntu 20.04LTS  
