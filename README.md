@@ -5,22 +5,22 @@ URL:http://ec2-13-208-45-230.ap-northeast-3.compute.amazonaws.com/home
 
 # 仕様技術
 * フロントエンド
-    * Vue.js
+    * Vue.js 2.5.17
     * jQuery
-    * HTML/CSS/Sass/Bootstrap
+    * HTML/CSS/Sass/Bootstrap 4
 * バックエンド
-    * PHP
-    * Laravel
-    * PHPUnit 
+    * PHP 8.0.3
+    * Laravel Framework 8.40.0
+    * PHPUnit 9.3.3
 * インフラ
     * CircleCI
-    * Docker
+    * Docker 20.10.6 build 370c289
     * nginx
     * mysql
-    * AWS
+    * AWS (EC2 S3 RDS)
     * gitlab(github移行まで)
 * ツール
-    * Visual Studio Code  
+    * Visual Studio Code
 * ライブラリ
     * bumbummen99/shoppingcart
     * hooper
