@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class HomesTableSeeder extends Seeder
 {
@@ -14,10 +15,12 @@ class HomesTableSeeder extends Seeder
      */
     public function run()
     {
+        $s3path = Storage::disk('s3')->url('uploads/');
+
         DB::table('homes')->insert([
-            'slideOne' => '/uploads/JGjx8mLwdbgdXRdvSybHfzNz7Onq0SHwiZwDQOQT.jpg',
-            'slideTwo' => 'uploads/dIWEZKlu0T1wxMDj22wmHhkdIGNtyxZP5VeLwkJc.jpg',
-            'imgOne' => '/uploads/KHDWJhtIhoRPY2gNtB6jGoFx218M6ZCG6RUvaQbP.jpg',
+            'slideOne' => $s3path . 'pexels-stanislav-kondratiev-2977304.jpg',
+            'slideTwo' => $s3path . 'pexels-kevin-menajang-1206258.jpg',
+            'imgOne' => $s3path . 'pexels-ekrulila-3084342.jpg',
         ]);
     }
 }
