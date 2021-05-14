@@ -14,9 +14,9 @@ URL:http://ec2-13-208-45-230.ap-northeast-3.compute.amazonaws.com/home
     * PHPUnit 9.3.3
 * インフラ
     * CircleCI
-    * Docker 20.10.6 build 370c289
-    * nginx
-    * mysql
+    * Docker 20.10.6 / Docker-compose 1.29.1
+    * nginx 1.2
+    * mysql 5.7.34
     * AWS (EC2 S3 RDS)
     * gitlab(github移行まで)
 * ツール
@@ -24,7 +24,7 @@ URL:http://ec2-13-208-45-230.ap-northeast-3.compute.amazonaws.com/home
 * ライブラリ
     * bumbummen99/shoppingcart
     * hooper
-    * intervention
+    * intervention Image
 
 # 機能一覧
 * ユーザー認証
