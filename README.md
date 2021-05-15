@@ -51,7 +51,7 @@ URL:http://ec2-13-208-45-230.ap-northeast-3.compute.amazonaws.com/home
 
 # ER図
 
-![Screenshot from 2021-05-15 18-47-44](https://user-images.githubusercontent.com/35868597/118356003-22efa600-b5ae-11eb-8c62-c5a35520e1ab.png)
+![Screenshot from 2021-05-15 19-06-05](https://user-images.githubusercontent.com/35868597/118356521-a4e0ce80-b5b0-11eb-94f3-d3478db8e7d2.png)
 
 
 # 開発環境
