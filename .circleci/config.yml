@@ -47,6 +47,12 @@ jobs:
       - run: ssh ${USER_NAME}@${HOST_NAME} 'cd /home/ec2-user/laravel-docker/src/indvshop && git pull origin master'
 workflows:
     version: 2
-    deploy:
+    build_and_deploy:
       jobs:
-        - deploy
+        - build
+        - deploy:
+            requires:
+              - build
+            filters:
+              branches:
+                only: master
