@@ -32,24 +32,6 @@ class HomeController extends Controller
     {
         $home = Home::find(1);
         $product = Product::orderBy('created_at','desc')->take(8)->get();
-/*
-        $imagePath = [$home->slideOne, $home->slideTwo];
-
-        $bannerImg = $home->imgOne;
-
-        $img = Image::make(public_path("{$bannerImg}"))->fit(600,300);
-        $img->save();
-
-        foreach($imagePath as $imgpath){
-            $img = Image::make(public_path("{$imgpath}"))->fit(1000, 400);
-            $img->save();
-        }
-
-        foreach($product as $prd){
-            $imgpath = $prd->image;
-            $img = Image::make(public_path("storage/{$imgpath}"))->fit(1000,1000);
-            $img->save();
-        }*/
 
         return view('home.index', compact('home', 'product'));
     }
