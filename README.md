@@ -1,67 +1,64 @@
-<<<<<<< HEAD
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# indvshop
+個人でネット販売されたい方向けの小規模なECサイトです。  
+現在はポートフォリオとしてレザークラフト・革細工の販売サイトのようなデザインにしてあります。  
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+URL:http://ec2-13-208-45-230.ap-northeast-3.compute.amazonaws.com/home
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# 仕様技術
+* フロントエンド
+    * Vue.js 2.5.17
+    * jQuery
+    * HTML/CSS/Sass/Bootstrap 4
+* バックエンド
+    * PHP 8.0.3
+    * Laravel Framework 8.40.0
+    * PHPUnit 9.3.3
+* インフラ
+    * CircleCI
+    * Docker 20.10.6 / Docker-compose 1.29.1
+    * nginx 1.2
+    * mysql 5.7.34
+    * AWS (EC2 S3 RDS)
+    * gitlab(github移行まで)
+* ツール
+    * Visual Studio Code
+* ライブラリ
+    * bumbummen99/shoppingcart
+    * hooper
+    * intervention Image
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# 機能一覧
+* ユーザー認証
+* ページネーション
+* 商品検索　カテゴリ検索機能
+* お問い合わせ　画像アップロード機能
+* 管理者認証機能
+* 商品管理機能
+* ユーザー管理機能
+* ホーム画面デザイン変更機能
+* カート機能
+* 注文機能
+* ゲスト注文機能
+* 見積もり・お問い合わせ管理機能
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# 画面一覧
+![IndvshopsPages](https://user-images.githubusercontent.com/35868597/118271642-83bea600-b4fc-11eb-8361-b6040edac694.png)
 
-## Learning Laravel
+# インフラ構成図
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+![awsstructure (2)](https://user-images.githubusercontent.com/35868597/118274130-b8802c80-b4ff-11eb-8315-3e045d974d26.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# ER図
 
-## Laravel Sponsors
+![Screenshot from 2021-05-15 19-06-05](https://user-images.githubusercontent.com/35868597/118356521-a4e0ce80-b5b0-11eb-94f3-d3478db8e7d2.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-=======
-# IndvShop
-
->>>>>>> d4e388227a3a67ad8fb5717f3ab0cb2a0dbc5c5e
+# 開発環境
+* デスクトップPC
+    os Linux ubuntu 20.04LTS  
+    CPU core i5 3450  
+    メモリ 18gb  
+    グラフィックボード gtx1050ti  
+* ノートPC(出先にて使用)  
+    macbook air 13inch mid 2011(os sierra)
