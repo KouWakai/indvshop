@@ -33,15 +33,17 @@
     </div>
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">お客様情報</h4>
-      <form action="/order" method="post" class="needs-validation" novalidate="">
+      <form action="/order" method="post" class="needs-validation">
       @csrf
         <div class="col-md-6 mb-3 pl-0">
           <label class="font-weight-bold" for="username">お名前</label>
           <div class="input-group">
-              <input type="text" name="username" class="form-control" placeholder="お名前" required="">
-            <div class="invalid-feedback" style="width: 100%;">
-              Your username is required.
-            </div>
+              <input id="username" type="text" name="username" class="form-control @error('username') is-invalid @enderror" placeholder="お名前" required="">
+              @error('username')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+          @enderror
           </div>
         </div>
 
@@ -201,7 +203,7 @@
     </div>
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">お客様情報</h4>
-      <form action="/order" method="post" class="needs-validation" novalidate="">
+      <form action="/order" method="post" class="needs-validation">
       @csrf
 
         <div class="mb-3">
