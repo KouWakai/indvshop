@@ -1,6 +1,8 @@
 # indvshop
-個人でネット販売されたい方向けの小規模なECサイトです。
+個人でネット販売されたい方向けの小規模なECサイトです。  
 現在はポートフォリオとしてレザークラフト・革細工の販売サイトのようなデザインにしてあります。  
+
+
 URL:http://ec2-13-208-45-230.ap-northeast-3.compute.amazonaws.com/home
 
 # 仕様技術
@@ -39,6 +41,18 @@ URL:http://ec2-13-208-45-230.ap-northeast-3.compute.amazonaws.com/home
 * 注文機能
 * ゲスト注文機能
 * 見積もり・お問い合わせ管理機能
+
+# 画面一覧
+![IndvshopsPages](https://user-images.githubusercontent.com/35868597/118271642-83bea600-b4fc-11eb-8361-b6040edac694.png)
+
+# インフラ構成図
+
+![awsstructure (2)](https://user-images.githubusercontent.com/35868597/118274130-b8802c80-b4ff-11eb-8315-3e045d974d26.png)
+
+# ER図
+
+![Screenshot from 2021-05-15 19-06-05](https://user-images.githubusercontent.com/35868597/118356521-a4e0ce80-b5b0-11eb-94f3-d3478db8e7d2.png)
+
 
 # 開発環境
 * デスクトップPC
