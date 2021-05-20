@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html class="h-100" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -8,6 +9,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -20,9 +23,15 @@
             }
         </style>
     </head>
-    <body class="antialiased">
-        <div id="index">
+
+    <body class="d-flex flex-column h-100">
+        <div id="app">
+            <div id="index">
+            </div>
         </div>
-        <script src="{{ asset('js/app.js')}}"></script>
+        <footer class="footer mt-auto" id="footer">
+        </footer>
     </body>
 </html>
+
+    <script src="{{ asset('js/app.js')}}"></script>
