@@ -4,21 +4,28 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
   } from "react-router-dom";
+  import Header from './Header'
+  import Home from './Home'
+  import Footer from './Footer'
+  import Product from './Product'
 
 function Index() {
     return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                        <div className="card-header">Example Component</div>
-
-                        <div className="card-body">I'm an example component!</div>
-                    </div>
-                </div>
-            </div>
+        <div>
+        <Router>
+        <Header />
+        <main>
+        <Switch>
+          <Route path="/home">
+          <Home />
+          </Route>
+          <Route path="/product">
+          <Product />
+          </Route>
+        </Switch>
+        </main>
+      </Router>
         </div>
     );
 }
