@@ -20,6 +20,8 @@ use App\Http\Controllers\SearchController;
 |
 */
 
+Route::post('/contact', [HomeController::class, 'store']);
+
 Route::get('/{any}', function () {
     return view('react.index');
 })->where('any','.*');
@@ -50,7 +52,6 @@ Route::get('/customorder', [HomeController::class, 'show']);
 Route::post('/customorder', [HomeController::class, 'store']);
 
 Route::get('/contact', [HomeController::class, 'show']);
-Route::post('/contact', [HomeController::class, 'store']);
 
 Auth::routes();
 
