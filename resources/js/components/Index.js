@@ -7,10 +7,11 @@ import {
   } from "react-router-dom";
   import Header from './Header'
   import Home from './Home'
-  import Footer from './Footer'
   import Product from './Product'
   import Customorder from './Customorder'
   import Contact from './Contact'
+  import Cart from './Cart'
+  import ContactSuccess from './ContactSuccess'
 
 function Index() {
     return (
@@ -25,11 +26,20 @@ function Index() {
                     <Route path="/product">
                         <Product />
                     </Route>
+                    <Route path="/product/:id">
+                        <Product />
+                    </Route>
                     <Route path="/customorder">
                         <Customorder />
                     </Route>
                     <Route path="/contact">
                         <Contact />
+                    </Route>
+                    <Route path="/cart">
+                        <Cart />
+                    </Route>
+                    <Route path="/contactsuccess">
+                        <ContactSuccess />
                     </Route>
                 </Switch>
             </main>
