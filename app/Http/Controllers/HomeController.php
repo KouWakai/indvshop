@@ -90,7 +90,7 @@ class HomeController extends Controller
                 'description' => $data['description'],
               ]);
 
-            return view('contact.store', compact('contact'));
+            return response()->json(['contact' => $contact]);
         }
 
     }
