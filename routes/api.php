@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Home;
 use App\Models\Product;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,16 @@ Route::get('/product', function (Request $request){
 
     return response()->json(['product' => $product]);
 });
+
+/*
+|--------------------------------------------------------------------------
+| API Auth Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::group(['prefix' => 'users'], function ($router) {
+    Route::post('/register', [UserController::class, 'register'])->name('register.user');
+    Route::post('/login', [UserController::class, 'login'])->name('login.user');
+    Route::get('/view-profile', [UserController::class, 'viewProfile'])->name('profile.user');
+    Route::get('/logout', [UserController::class, 'logout'])->name('logout.user');
+    });

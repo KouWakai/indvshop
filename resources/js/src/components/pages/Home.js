@@ -7,6 +7,7 @@ import {
     Route,
     Link
   } from "react-router-dom";
+  import "/css/Home.css";
 
 function Home() {
 
@@ -30,7 +31,7 @@ function Home() {
 
     return (
             <div className="container">
-                <div className="d-flex m-5 align-items-center">
+                <div className="d-flex m-5 align-items-center banner">
                     <img src={home.imgOne} className="col-7 p-0 h-100 border rounded-left border-right-0" alt=""/>
                     <div className="d-flex align-items-center justify-content-center col-5 py-4 bg-white h-100 border rounded-right border-left-0">
                         <div>
