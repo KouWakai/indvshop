@@ -1,13 +1,39 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import {Pagination} from 'react-laravel-paginex'
 
 function Product() {
+
+
+
+  const [products, setProducts] = useState([]);
+  const [productsData, setProductsData] = useState([]);
+
+  useEffect(() => {
+      getProducts()
+  },[])
+
+  const getProducts = async () => {
+    const response = await axios.get('/api/products');
+    setProducts(response.data.product)
+    setProductsData(response.data.product.data)
+}
+
+  const getData=(data)=>{
+    axios.get('/api/products?page=' + data.page).then(response => {
+      setProducts(response.data.product),
+      setProductsData(response.data.product.data)
+    });
+  }
+
+
     return (
         <div class="container">
         <div class="row">
@@ -43,31 +69,38 @@ function Product() {
             </div>
           </nav>
           <div class="col-9">
-      
+
             <div>
-              <form class="d-flex align-items-center" action="/search">
+              <form class="d-flex align-items-center pt-3" action="/search">
                   <input type="text" name="keyword" class="form-control mx-3" placeholder="検索したいフレーズを入力してください"></input>
                   <input type="submit" value="検索" class="btn btn-primary p-1"></input>
               </form>
             </div>
-      
-      
-              <div class="row d-flex justify-content-left">
-                      <div class="col-4 mt-2 py-3">
-                          <a href="/product/{{ $prd->id }}">
-                              <img src="{{ $prd->image ?? ''}}" alt="" class="w-100 border rounded-top border-bottom-0"></img>
-                          </a>
-                          <a href="/product/{{ $prd->id }}">
-                              <div class="text-center border rounded-bottom bg-white text-dark border-top-0">
-                              </div>
-                          </a>
-                      </div>
+
+
+            <div class="row d-flex justify-content-left">
+                    {productsData.map((product) =>
+                        <div class="col-4 mt-2 py-3">
+                            <Link to={`/product/${product.id}`}>
+                                <img src={product.image} alt="" class="w-100 border rounded-top border-bottom-0"/>
+                                </Link>
+                            <Link to={`/product/${product.id}`}>
+                                <div class="text-center border rounded-bottom bg-white text-dark border-top-0">
+                                    <span>{product.caption}<br></br></span>
+                                    <span>¥{product.price}</span>
+                                </div>
+                                </Link>
+                        </div>
+                        )
+                    }
+            </div>
+
+            <div class="row">
+              <div class="col-12 d-flex justify-content-center">
+                <Pagination changePage={getData} data={products}/>
               </div>
-      
-                <div class="row">
-                  <div class="col-12 d-flex justify-content-center">
-                  </div>
-                </div>
+            </div>
+
           </div>
       </div>
       </div>

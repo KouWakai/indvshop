@@ -12,6 +12,7 @@ import {
   import Contact from './Contact'
   import Cart from './Cart'
   import ContactSuccess from './ContactSuccess'
+  import ProductDetail from './ProductDetail'
   import {store} from '../CreateStore';
   import {Provider} from 'react-redux';
   import Login from "./LoginComponent";
@@ -28,10 +29,8 @@ function Index() {
                             <Route path="/home">
                                 <Home />
                             </Route>
-                            <Route path="/product">
-                                <Product />
-                            </Route>
-                            <Route path="/product/:id">
+                            <Route path="/product/:id" component={ProductDetail} />
+                            <Route path="/product" exact>
                                 <Product />
                             </Route>
                             <Route path="/customorder">

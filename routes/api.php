@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Home;
 use App\Models\Product;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +29,18 @@ Route::get('/home', function (Request $request){
     return response()->json(['home' => $home]);
 });
 
+Route::get('/product/{id}', [ProductController::class, 'show']);
+
 Route::get('/product', function (Request $request){
 
     $product = Product::orderBy('created_at','desc')->take(8)->get();
+
+    return response()->json(['product' => $product]);
+});
+
+Route::get('/products', function (Request $request){
+
+    $product = Product::orderBy('created_at','desc')->paginate(9);
 
     return response()->json(['product' => $product]);
 });

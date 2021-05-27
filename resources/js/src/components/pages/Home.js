@@ -47,10 +47,10 @@ function Home() {
                 <div className="row p-4">
                     {products.map((product) => 
                         <div class="col-3 pb-4">
-                            <Link to={'/product/' + product.id}>
+                            <Link to={`/product/${product.id}`}>
                                 <img src={product.image} alt="" class="w-100 border rounded-top border-bottom-0"/>
                                 </Link>
-                            <Link to={'/product/' + product.id}>
+                            <Link to={`/product/${product.id}`}>
                                 <div class="text-center border rounded-bottom bg-white text-dark border-top-0">
                                     <span>{product.caption}<br></br></span>
                                     <span>¥{product.price}</span>

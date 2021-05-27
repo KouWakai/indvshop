@@ -15,6 +15,8 @@ class ProductController extends Controller
     }
 
     public function show($id){
-        return view('product.show', ['product' => Product::findOrFail($id)]);
+        $product = Product::findOrFail($id);
+
+        return response()->json(['product' => $product]);
     }
 }
