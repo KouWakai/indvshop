@@ -14,7 +14,7 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 1; $i <=25; $i++)
+        for($i = 1; $i <=3; $i++)
         {
             DB::table('products')->insert([
                 ['caption' => "ベルト1", 'image' => '/3927435_s.jpg', 'price' => 9980, 'category' => 'ベルト',],
