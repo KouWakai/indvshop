@@ -31,7 +31,7 @@
             @foreach($result as $rlt)
                 <div class="col-4 mt-2 py-3">
                     <a href="/product/{{ $rlt->id }}">
-                        <img src="/storage/{{ $rlt->image ?? ''}}" alt="" class="w-100 border rounded-top border-bottom-0">
+                        <img src="/storage/uploads{{ $rlt->image ?? ''}}" alt="" style="height:200px" 　class="w-100 border rounded-top border-bottom-0">
                     </a>
                     <a href="/product/{{ $rlt->id }}">
                         <div class="text-center border rounded-bottom bg-white text-dark border-top-0">

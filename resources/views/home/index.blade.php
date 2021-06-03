@@ -3,7 +3,7 @@
 @section('header')
     @parent
     <div class="py-3 d-flex justify-content-center bg-white">
-        <hooper-slider class="m-4 border rounded" topimg1=/storage/{{ $home->slideOne ?? ''}} topimg2=/storage/{{ $home->slideTwo ?? ''}} style="width:1200px"></hooper-Slider>
+        <hooper-slider class="m-4 border rounded" topimg1=/storage/uploads{{ $home->slideOne ?? ''}} topimg2=/storage/uploads{{ $home->slideTwo ?? ''}} style="width:1200px"></hooper-Slider>
 
     </div>
 @endsection
@@ -13,7 +13,7 @@
 
 
     <div class="d-flex m-5 align-items-center" style="height:350px">
-        <img src="/storage/{{ $home->imgOne ?? ''}}" class="col-7 p-0 h-100 border rounded-left border-right-0" alt="">
+        <img src="/storage/uploads{{ $home->imgOne ?? ''}}" class="col-7 p-0 h-100 border rounded-left border-right-0" alt="">
         <div class="d-flex align-items-center justify-content-center col-5 py-4 bg-white h-100 border rounded-right border-letf-0">
             <div>
                 <h5 class="text-center font-weight-bold">写真からあなたのバイクのペーパークラフトを<br>作成いたします</h5>
@@ -31,7 +31,7 @@
         @foreach($product as $prd)
         <div class="col-3 pb-4">
             <a href="/product/{{ $prd->id }}">
-                <img src="/storage/{{ $prd->image ?? ''}}" alt="" class="w-100 border rounded-top border-bottom-0">
+                <img src="/storage/uploads{{ $prd->image ?? ''}}" alt="" style="height:200px" class="w-100 border rounded-top border-bottom-0">
             </a>
             <a href="/product/{{ $prd->id }}">
                 <div class="text-center border rounded-bottom bg-white text-dark border-top-0">

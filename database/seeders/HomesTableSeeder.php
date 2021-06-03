@@ -15,9 +15,9 @@ class HomesTableSeeder extends Seeder
     public function run()
     {
         DB::table('homes')->insert([
-            'slideOne' => '/IMG_0477.JPG',
-            'slideTwo' => 'IMG_0478.JPG',
-            'imgOne' => '/pexels-sourav-mishra-5541995.jpg',
+            'slideOne' => '/pexels-stanislav-kondratiev-2977304.jpg',
+            'slideTwo' => '/pexels-kevin-menajang-1206258.jpg',
+            'imgOne' => '/pexels-ekrulila-3084342.jpg',
         ]);
     }
 }

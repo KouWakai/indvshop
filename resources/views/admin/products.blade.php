@@ -15,7 +15,7 @@
     <div class="row p-3">
         @foreach($product as $prd)
         <div class="col-2 pb-4" data-toggle="modal" data-target="#EdiPrdModal-{{ $prd->id }}">
-            <img src="/storage/{{ $prd->image ?? ''}}" alt="" class="w-100">
+            <img src="/storage/uploads{{ $prd->image ?? ''}}" alt="" class="w-100" style="height:150px" >
             <div class="text-center border rounded bg-white text-dark">
             <span>{{ $prd->caption ?? ''}}<br></span>
             <span>¥{{ $prd->price ?? ''}}</span>

@@ -27,7 +27,7 @@
 
             @foreach(Cart::content() as $row)
             <div class="col-12 align-items-center d-flex justify-content-between text-center border rounded-bottom bg-white">
-                <img src="/storage/{{ $row->options->image }}" class="col-2 p-3">
+                <img src="/storage/uploads{{ $row->options->image }}" class="col-2 p-3">
                 <span class="col-2">{{ $row->name }}</span>
                 <span class="col-2">{{ $row->qty }}</span>
                 <span class="col-2">{{ $row->price }}</span>
