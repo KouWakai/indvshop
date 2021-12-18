@@ -4,7 +4,7 @@
 @section('header')
     @parent
     <div class="py-3 d-flex justify-content-center bg-white">
-        <hooper-slider class="m-4 border rounded" topimg1={{ $home->slideOne ?? ''}} topimg2={{ $home->slideTwo ?? ''}} style="width:1200px"></hooper-Slider>
+        <hooper-slider class="m-4 border rounded" topimg1={{ $home->slideOne ?? ''}} topimg2={{ $home->slideTwo ?? ''}} style="width:100%"></hooper-Slider>
 
     </div>
 @endsection
@@ -13,8 +13,8 @@
 <div class="container">
 
 
-    <div class="d-flex m-5 align-items-center" style="height:350px">
-        <img src="{{ $home->imgOne ?? ''}}" class="col-7 p-0 h-100 border rounded-left border-right-0" alt="">
+    <div class="d-flex m-sm-5 align-items-center" style="height:350px">
+        <img src="{{ $home->imgOne ?? ''}}" class="col-sm-7 p-0 h-100 border rounded-left border-right-0" alt="">
         <div class="d-flex align-items-center justify-content-center col-5 py-4 bg-white h-100 border rounded-right border-letf-0">
             <div>
                 <h5 class="text-center font-weight-bold">革製品のオーダーメイド<br>承っております</h5>
@@ -30,7 +30,7 @@
 
     <div class="row p-4">
         @foreach($product as $prd)
-        <div class="col-3 pb-4">
+        <div class="col-12 col-sm-3 pb-4">
             <a href="/product/{{ $prd->id }}">
                 <img src="{{ $prd->image ?? ''}}" alt="" class="w-100 border rounded-top border-bottom-0">
             </a>
