@@ -2,8 +2,7 @@
 個人でネット販売されたい方向けの小規模なECサイトです。  
 現在はポートフォリオとしてレザークラフト・革細工の販売サイトのようなデザインにしてあります。  
 
-
-URL:http://ec2-13-208-45-230.ap-northeast-3.compute.amazonaws.com/home
+awsにて稼動中です。URLは関係者のみに公開しております。
 
 # 仕様技術
 * フロントエンド
@@ -53,12 +52,3 @@ URL:http://ec2-13-208-45-230.ap-northeast-3.compute.amazonaws.com/home
 
 ![Screenshot from 2021-05-15 19-06-05](https://user-images.githubusercontent.com/35868597/118356521-a4e0ce80-b5b0-11eb-94f3-d3478db8e7d2.png)
 
-
-# 開発環境
-* デスクトップPC
-    os Linux ubuntu 20.04LTS  
-    CPU core i5 3450  
-    メモリ 18gb  
-    グラフィックボード gtx1050ti  
-* ノートPC(出先にて使用)  
-    macbook air 13inch mid 2011(os sierra)
