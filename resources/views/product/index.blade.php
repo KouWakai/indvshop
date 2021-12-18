@@ -34,7 +34,7 @@
         </ul>
       </div>
     </nav>
-    <div class="col-9">
+    <div class="col-12 col-sm-9">
 
       <div style="padding:20px 0; padding-left:0px;">
         <form class="d-flex align-items-center" action="/search">
@@ -44,9 +44,9 @@
       </div>
 
 
-        <div class="row d-flex justify-content-left">
+        <div class="row d-flex justify-content-center">
             @foreach($product as $prd)
-                <div class="col-4 mt-2 py-3">
+                <div class="col-10 col-sm-4 mt-2 py-3">
                     <a href="/product/{{ $prd->id }}">
                         <img src="{{ $prd->image ?? ''}}" alt="" class="w-100 border rounded-top border-bottom-0">
                     </a>
